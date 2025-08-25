@@ -1,89 +1,179 @@
 // scripts/faq.js
-
 (() => {
-    // Check for reduced motion preference
-    const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  'use strict';
 
-    /* ===== Reveal on Scroll (Fade-in and Slide) - Consistent with other sections ===== */
-    const revealElements = document.querySelectorAll('.reveal-from-bottom, .reveal-from-right');
-    const revealObserverOptions = {
-        root: null, // viewport as the root
-        rootMargin: '0px',
-        threshold: 0.1 // Trigger when 10% of the element is visible
-    };
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const revealCallback = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Stop observing once visible
-            }
-        });
-    };
+  const ready = (fn) => {
+    if (document.readyState !== 'loading') fn();
+    else document.addEventListener('DOMContentLoaded', fn);
+  };
 
-    const revealObserver = new IntersectionObserver(revealCallback, revealObserverOptions);
-    revealElements.forEach(el => revealObserver.observe(el));
+  ready(() => {
+    const items = Array.from(document.querySelectorAll('.accordion-item'));
+    if (!items.length) return;
 
+    // store open/close functions so we can close other items reliably
+    const api = new Map();
 
-    /* ===== Accordion Functionality - Consistent with Services Section ===== */
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    items.forEach(item => {
+      const header = item.querySelector('.accordion-header');
+      const content = item.querySelector('.accordion-content');
+      if (!header || !content) return;
 
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            const accordionItem = header.closest('.accordion-item');
-            const content = accordionItem.querySelector('.accordion-content');
-            const isExpanded = header.getAttribute('aria-expanded') === 'true';
+      // baseline init
+      content.style.overflow = 'hidden';
+      content.style.maxHeight = '0px';
+      content.style.display = 'none';
+      content._animating = false;
 
-            // If not reduced motion, close other accordions and animate current one
-            if (!isReducedMotion) {
-                // Close all other accordions that are currently open
-                accordionHeaders.forEach(otherHeader => {
-                    const otherAccordionItem = otherHeader.closest('.accordion-item');
-                    const otherContent = otherAccordionItem.querySelector('.accordion-content');
-                    if (otherHeader !== header && otherHeader.getAttribute('aria-expanded') === 'true') {
-                        otherHeader.setAttribute('aria-expanded', 'false');
-                        otherContent.style.maxHeight = '0';
-                    }
-                });
+      const open = () => {
+        if (content._animating) return;
+        content._animating = true;
 
-                // Toggle current accordion
-                if (isExpanded) {
-                    header.setAttribute('aria-expanded', 'false');
-                    content.style.maxHeight = '0';
-                } else {
-                    header.setAttribute('aria-expanded', 'true');
-                    // Set max-height to scrollHeight to allow smooth transition
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                }
-            } else { // If reduced motion, toggle directly without animation
-                if (isExpanded) {
-                    header.setAttribute('aria-expanded', 'false');
-                    content.style.maxHeight = '0';
-                } else {
-                    header.setAttribute('aria-expanded', 'true');
-                    content.style.maxHeight = 'fit-content';
-                }
-            }
+        header.setAttribute('aria-expanded', 'true');
+        item.classList.add('is-open');
+
+        if (prefersReduced) {
+          content.style.display = 'block';
+          content.style.maxHeight = 'none';
+          content._animating = false;
+          return;
+        }
+
+        // Make visible so scrollHeight is measurable
+        content.style.display = 'block';
+        content.style.overflow = 'hidden';
+        // Start from 0
+        content.style.maxHeight = '0px';
+        // Ensure browser paints before we measure
+        requestAnimationFrame(() => {
+          const full = content.scrollHeight; // measured height
+          // Apply transition to max-height
+          content.style.transition = 'max-height 360ms ease';
+          content.style.maxHeight = full + 'px';
         });
 
-        // Handle keyboard navigation for accordion items
-        header.closest('.accordion-item').addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault(); // Prevent default scroll for space bar
-                header.click();
-            }
+        content.addEventListener('transitionend', function _onOpen(e) {
+          if (e.propertyName !== 'max-height') return;
+          // After opening, allow dynamic growth
+          content.style.transition = '';
+          content.style.maxHeight = 'none';
+          content.style.overflow = 'visible';
+          content._animating = false;
+        }, { once: true });
+      };
+
+      const close = () => {
+        if (content._animating) return;
+        content._animating = true;
+
+        header.setAttribute('aria-expanded', 'false');
+        item.classList.remove('is-open');
+
+        if (prefersReduced) {
+          content.style.display = 'none';
+          content.style.maxHeight = '0px';
+          content._animating = false;
+          return;
+        }
+
+        // If maxHeight is 'none' (auto), set it to current scrollHeight px to start transition
+        // Make sure element is visible to measure
+        content.style.overflow = 'hidden';
+        content.style.display = 'block';
+        const current = content.scrollHeight;
+        content.style.maxHeight = current + 'px';
+
+        // Force a paint then animate to 0
+        requestAnimationFrame(() => {
+          content.style.transition = 'max-height 360ms ease';
+          content.style.maxHeight = '0px';
         });
+
+        content.addEventListener('transitionend', function _onClose(e) {
+          if (e.propertyName !== 'max-height') return;
+          // Fully hide after collapse
+          content.style.transition = '';
+          content.style.display = 'none';
+          content.style.maxHeight = '0px';
+          content._animating = false;
+        }, { once: true });
+      };
+
+      api.set(item, { open, close, header, content });
     });
 
-    // Initial check for reduced motion to ensure content is visible if needed
-    if (isReducedMotion) {
-        document.querySelectorAll('.accordion-content').forEach(content => {
-            // If the accordion is explicitly set to expanded (e.g., if a previous state was saved),
-            // ensure content is visible even with reduced motion.
-            if (content.closest('.accordion-item').querySelector('.accordion-header').getAttribute('aria-expanded') === 'true') {
-                 content.style.maxHeight = 'fit-content';
-            }
-        });
-    }
+    // Attach click handlers (single-open behavior: closes others)
+    api.forEach((entry, item) => {
+      const { header, open, close } = entry;
 
+      header.addEventListener('click', (ev) => {
+        // header is a button — no need to prevent default in normal use.
+        ev.preventDefault();
+
+        const isOpen = item.classList.contains('is-open');
+
+        // close other open items
+        api.forEach((other, otherItem) => {
+          if (otherItem !== item && otherItem.classList.contains('is-open')) other.close();
+        });
+
+        // toggle this one
+        if (isOpen) close();
+        else open();
+      });
+
+      // keyboard accessibility
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          header.click();
+        } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+          const headers = Array.from(document.querySelectorAll('.accordion-header'));
+          const idx = headers.indexOf(header);
+          if (idx === -1) return;
+          if (e.key === 'ArrowDown') headers[(idx + 1) % headers.length].focus();
+          else headers[(idx - 1 + headers.length) % headers.length].focus();
+        }
+      });
+    });
+
+    // keep open panels sized correctly on resize / content changes
+    const resizeHandler = () => {
+      api.forEach(({ content }, item) => {
+        if (item.classList.contains('is-open')) {
+          // if maxHeight is 'none', skip; otherwise re-measure briefly
+          if (content.style.maxHeight === 'none' || content._animating) return;
+          content.style.transition = '';
+          const full = content.scrollHeight;
+          content.style.maxHeight = full + 'px';
+          // after short delay, set to none so it can grow
+          setTimeout(() => {
+            if (item.classList.contains('is-open')) content.style.maxHeight = 'none';
+          }, 360);
+        }
+      });
+    };
+    window.addEventListener('resize', () => { clearTimeout(window._faqResizeTimer); window._faqResizeTimer = setTimeout(resizeHandler, 120); });
+
+    // mutation observer to handle dynamic content changes inside open panels
+    const observer = new MutationObserver(() => {
+      api.forEach(({ content }, item) => {
+        if (item.classList.contains('is-open') && !content._animating) {
+          // if currently 'none' (auto), briefly set px then back to none for smooth adjustment
+          if (content.style.maxHeight === 'none') {
+            content.style.transition = '';
+            const full = content.scrollHeight;
+            content.style.maxHeight = full + 'px';
+            setTimeout(() => content.style.maxHeight = 'none', 360);
+          }
+        }
+      });
+    });
+
+    api.forEach(({ content }) => {
+      observer.observe(content, { childList: true, subtree: true, characterData: true });
+    });
+  });
 })();
