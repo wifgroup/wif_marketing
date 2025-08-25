@@ -184,7 +184,14 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-out; /* Smooth slide down */
-    will-change: max-height;
+    /* will-change: max-height; */
+}
+.accordion-header[aria-expanded="true"] + .accordion-content {
+  overflow: visible; /* allows long text to display properly */
+}
+.accordion-item.is-open .accordion-content {
+  display: block; /* let JS animate height */
+   max-height: 1000px;
 }
 
 .accordion-content p {
