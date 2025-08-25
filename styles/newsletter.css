@@ -1,0 +1,379 @@
+/* styles/newsletter.css */
+
+/* ========================
+   Variables (Modern, Clean Theme - Consistent)
+======================== */
+:root {
+    --color-bg: #fdfdfd; /* Clean, soft white background */
+    --color-primary: #3b82f6; /* Professional Blue */
+    --color-secondary: #1d4ed8; /* Darker Blue for gradient depth */
+    --color-accent: #60a5fa; /* Lighter Blue for highlights */
+    --color-text: #1f2937; /* Dark Gray Text */
+    --color-subtext: #4b5563; /* Medium Gray Subtext */
+    --color-card-bg: #ffffff; /* Pure white cards */
+    --color-border-light: #e5e7eb; /* Light border for separation */
+    --color-light-bg: #eff6ff; /* Very light blue background for subtle elements */
+    --color-success: #10b981; /* Green for success messages */
+    --color-error: #ef4444; /* Red for error messages */
+
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --border-radius-main: 0.75rem;
+
+    --shadow-subtle: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-button: 0 8px 20px rgba(59, 130, 246, 0.3);
+    --shadow-button-hover: 0 12px 30px rgba(59, 130, 246, 0.45);
+
+    --transition-duration: 0.5s;
+    --transition-easing: ease-in-out;
+}
+
+/* Base Styles */
+.newsletter-section {
+    position: relative;
+    padding: 7rem 1rem;
+    background-color: var(--color-bg);
+    overflow: hidden;
+    font-family: var(--font-body);
+    color: var(--color-text);
+}
+
+/* Subtle Background Texture */
+.newsletter-bg-texture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.newsletter-container {
+    position: relative;
+    z-index: 1;
+    max-width: 900px; /* Centered, narrower container for focus */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem; /* Adjusted gap */
+    min-height: 60vh; /* Shorter section height */
+}
+
+/* Section Header - Consistent */
+.newsletter-header {
+    text-align: center;
+    max-width: 700px; /* Narrower header for directness */
+    margin: 0 auto 3rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.newsletter-header .section-subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    position: relative;
+    display: inline-block;
+}
+.newsletter-header .section-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+}
+
+.newsletter-header .section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 3.8rem); /* Slightly smaller for lead gen focus */
+    font-weight: 800;
+    color: var(--color-text);
+    line-height: 1.2;
+}
+
+.newsletter-header .section-description {
+    font-size: 1.15rem; /* Slightly smaller */
+    color: var(--color-subtext);
+    line-height: 1.7;
+    max-width: 600px; /* Narrower description */
+    margin: 0.8rem auto 0 auto;
+}
+
+/* Newsletter Form */
+.newsletter-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; /* Spacing between elements */
+}
+
+.newsletter-form {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* Max width for input/button group */
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border-light);
+    border-radius: 999px; /* Pill shape */
+    box-shadow: var(--shadow-subtle);
+    overflow: hidden; /* Ensure input border radius aligns */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.newsletter-form:focus-within {
+    box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb, 59, 130, 246), 0.3); /* Focus ring */
+    border-color: var(--color-primary);
+}
+
+.newsletter-form input[type="email"] {
+    flex-grow: 1; /* Input takes available space */
+    padding: 1rem 1.5rem;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    color: var(--color-text);
+    outline: none;
+    min-width: 200px; /* Ensure input is not too small */
+}
+
+.newsletter-form input[type="email"]::placeholder {
+    color: var(--color-subtext);
+    opacity: 0.7;
+}
+
+.newsletter-form .btn-primary {
+    /* Reusing primary button style, but customizing for form */
+    flex-shrink: 0; /* Button doesn't shrink */
+    padding: 1rem 2rem;
+    border-radius: 999px; /* Override standard button radius for pill shape */
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    margin: 0; /* Remove default button margins */
+}
+
+.newsletter-form .btn-primary:hover,
+.newsletter-form .btn-primary:focus {
+    transform: translateY(-2px); /* Subtle lift on hover */
+    box-shadow: var(--shadow-button);
+}
+
+.form-message {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    min-height: 1.5rem; /* Reserve space to prevent layout shift */
+}
+.form-message.success {
+    color: var(--color-success);
+}
+.form-message.error {
+    color: var(--color-error);
+}
+
+/* Value Proposition */
+.value-proposition {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.prop-intro {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+}
+
+.value-proposition ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 2.5rem; /* Spacing between list items */
+}
+
+.value-proposition li {
+    font-size: 1rem;
+    color: var(--color-subtext);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    opacity: 0; /* For reveal animation */
+    transform: translateY(20px);
+    transition: opacity var(--transition-duration) var(--transition-easing),
+                transform var(--transition-duration) var(--transition-easing);
+}
+.value-proposition li i {
+    color: var(--color-accent); /* Checkmark color */
+    font-size: 1.1em;
+}
+
+/* Privacy Assurance */
+.privacy-assurance {
+    font-size: 0.9rem;
+    color: var(--color-subtext);
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+}
+.privacy-assurance i {
+    color: var(--color-accent);
+}
+.privacy-assurance a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+.privacy-assurance a:hover {
+    text-decoration: underline;
+}
+
+/* Optional Social Proof */
+.newsletter-social-proof {
+    margin-top: 3.5rem;
+    font-size: 1rem;
+    color: var(--color-subtext);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.newsletter-social-proof i {
+    color: var(--color-accent);
+}
+
+
+/* Animations (Reveal on Scroll) - Consistent */
+.reveal-from-bottom {
+    opacity: 0;
+    transform: translateY(70px);
+    transition: opacity var(--transition-duration) var(--transition-easing),
+                transform var(--transition-duration) var(--transition-easing);
+    will-change: opacity, transform;
+}
+/* Ensure `li` items in value-proposition use this correctly */
+.value-proposition li.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.is-visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .newsletter-bg-texture {
+        animation: none !important;
+        background-image: none !important;
+    }
+    .reveal-from-bottom,
+    .newsletter-form-wrapper input,
+    .newsletter-form-wrapper button,
+    .value-proposition li,
+    .privacy-assurance,
+    .newsletter-social-proof {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+        animation: none !important;
+        box-shadow: none !important;
+        filter: none !important;
+    }
+    .newsletter-form:focus-within {
+        box-shadow: 0 0 0 1px var(--color-primary); /* Simpler focus */
+    }
+    .newsletter-form .btn-primary {
+        background: var(--color-primary); /* Solid background */
+    }
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+    .newsletter-section {
+        padding: 5rem 1rem;
+    }
+    .newsletter-container {
+        gap: 2.5rem;
+    }
+    .newsletter-header {
+        margin-bottom: 2rem;
+    }
+    .newsletter-header .section-title {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+    }
+    .newsletter-header .section-description {
+        font-size: 1rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column; /* Stack input and button */
+        border: none; /* Remove border from wrapper */
+        box-shadow: none; /* Remove shadow from wrapper */
+        max-width: 350px; /* Narrower form on mobile */
+    }
+    .newsletter-form:focus-within {
+        box-shadow: none;
+        border-color: transparent;
+    }
+    .newsletter-form input[type="email"] {
+        width: 100%;
+        border: 1px solid var(--color-border-light); /* Add border to input directly */
+        border-radius: var(--border-radius-main); /* Rounded corners for input */
+        margin-bottom: 1rem; /* Space between input and button */
+        padding: 0.8rem 1.2rem;
+        box-shadow: var(--shadow-subtle);
+    }
+    .newsletter-form input[type="email"]:focus {
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 2px rgba(var(--color-primary-rgb, 59, 130, 246), 0.3);
+    }
+    .newsletter-form .btn-primary {
+        width: 100%;
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+    }
+    .form-message {
+        font-size: 0.9rem;
+    }
+    .value-proposition {
+        margin-top: 1.5rem;
+    }
+    .prop-intro {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    .value-proposition ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .value-proposition li {
+        font-size: 0.9rem;
+    }
+    .privacy-assurance, .newsletter-social-proof {
+        font-size: 0.85rem;
+        margin-top: 1.5rem;
+    }
+}
