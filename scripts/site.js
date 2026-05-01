@@ -38,8 +38,14 @@
   }
 
   const syncHeader = () => {
-    if (!header) return;
-    header.classList.toggle("is-scrolled", window.scrollY > 8);
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+
+    document.documentElement.style.setProperty("--scroll-progress", String(Math.min(Math.max(progress, 0), 1)));
+
+    if (header) {
+      header.classList.toggle("is-scrolled", window.scrollY > 8);
+    }
   };
 
   syncHeader();
