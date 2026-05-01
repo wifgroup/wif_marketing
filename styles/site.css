@@ -1383,14 +1383,30 @@ body::after {
 }
 
 .signal-card {
-  background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--ink);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(239, 245, 255, 0.94)),
+    #ffffff;
+  border-color: rgba(255, 255, 255, 0.74);
 }
 
 .signal-card-main {
   background:
-    linear-gradient(135deg, rgba(63, 120, 224, 0.22), rgba(255, 255, 255, 0.92)),
+    linear-gradient(135deg, rgba(63, 120, 224, 0.2), rgba(255, 255, 255, 0.96)),
     #ffffff;
+}
+
+.signal-card span {
+  color: #667085;
+}
+
+.signal-card strong {
+  color: var(--primary-dark);
+  text-shadow: none;
+}
+
+.signal-card p {
+  color: #566176;
 }
 
 .bar-chart {
@@ -1536,6 +1552,10 @@ body::after {
   margin-top: 0.45rem;
   color: #ffffff;
   font-size: clamp(1.25rem, 2vw, 1.9rem);
+}
+
+.home-case-card .case-label {
+  color: rgba(236, 243, 255, 0.78);
 }
 
 .home-case-card a {
