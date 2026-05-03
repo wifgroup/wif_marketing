@@ -1063,8 +1063,8 @@ cite {
   position: relative;
   padding: var(--spacing-64) 0 var(--spacing-32);
   background:
-    linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.14), transparent 38%),
-    linear-gradient(180deg, var(--color-aubergine), var(--color-aubergine-deep));
+    linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.2), transparent 34%),
+    linear-gradient(180deg, #241217 0%, #120b10 100%);
   color: var(--color-bone);
   overflow: hidden;
 }
@@ -1075,8 +1075,8 @@ cite {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
   background-size: 88px 88px;
   mask-image: linear-gradient(180deg, black, transparent 78%);
 }
@@ -1092,6 +1092,13 @@ cite {
   gap: var(--spacing-32);
 }
 
+.footer-grid > div:not(:first-child) {
+  padding: var(--spacing-16);
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius-card);
+}
+
 .footer-grid h2 {
   margin: 0 0 var(--spacing-12);
   font-family: var(--font-abc-rom);
@@ -1099,12 +1106,22 @@ cite {
   font-weight: 650;
   letter-spacing: 0;
   text-transform: uppercase;
+  color: var(--color-bone);
+}
+
+.footer-grid h2::after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 2px;
+  margin-top: var(--spacing-8);
+  background: var(--color-primary);
 }
 
 .footer-grid p,
 .footer-grid span,
 .footer-grid a {
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.86);
 }
 
 .footer-grid a,
@@ -1134,7 +1151,7 @@ cite {
   margin-top: var(--spacing-40);
   padding-top: var(--spacing-20);
   border-top: 1px solid rgba(255, 255, 255, 0.16);
-  color: rgba(255, 255, 255, 0.58);
+  color: rgba(255, 255, 255, 0.76);
   font-size: 0.9rem;
 }
 

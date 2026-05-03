@@ -136,7 +136,7 @@ function RenderPage($Page) {
         <a href="${prefix}case-studies.html">Case Studies</a>
         <a href="${prefix}about.html">About</a>
         <a href="${prefix}contact.html">Contact</a>
-        <a class="nav-cta" href="https://cal.com/dikshantgajera/free-audit" target="_blank" rel="noopener noreferrer">Book Free Audit</a>
+        <a class="nav-cta" href="https://cal.com/wifmarketing/free-audit" target="_blank" rel="noopener noreferrer">Book Free Audit</a>
       </nav>
     </div>
   </header>
