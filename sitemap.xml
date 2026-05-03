@@ -1,78 +1,267 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://wifmarketing.co/</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://wifmarketing.co/services.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://wifmarketing.co/case-studies.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://wifmarketing.co/assets/image/casestudy/AI%20Calling%20Agent.png</image:loc>
-      <image:title>AI calling agent lead qualification case study</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://wifmarketing.co/assets/image/casestudy/Workflow%20Automation.png</image:loc>
-      <image:title>Workflow automation case study</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://wifmarketing.co/assets/image/casestudy/Bajaj%20Chetak%20Lead%20Generation.png</image:loc>
-      <image:title>Bajaj Chetak lead generation case study</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://wifmarketing.co/assets/image/casestudy/Bajaj%20Chetak%20Revenue%20Scale.png</image:loc>
-      <image:title>Bajaj Chetak revenue scale case study</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://wifmarketing.co/assets/image/casestudy/revolt-ev.png</image:loc>
-      <image:title>Revolt Motors EV market entry case study</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://wifmarketing.co/assets/image/casestudy/Revolt%20Showroom%20Launch.png</image:loc>
-      <image:title>Revolt showroom launch case study</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://wifmarketing.co/assets/image/casestudy/Evanta%20International%20B2B%20Lead%20Generation.png</image:loc>
-      <image:title>Evanta International B2B lead generation case study</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://wifmarketing.co/assets/image/casestudy/jivanmarut.png</image:loc>
-      <image:title>Jivan Amrut D2C launch case study</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://wifmarketing.co/about.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://wifmarketing.co/contact.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://wifmarketing.co/privacy-policy.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://wifmarketing.co/terms.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/digital-marketing-agency-surat.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/performance-marketing-agency-surat.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/services/google-ads-agency-surat.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/services/seo-agency-surat.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/services/linkedin-ads-agency-india.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/services/meta-ads-agency-india.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/services/ai-calling-agent-lead-qualification.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/services/workflow-automation.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/services/ppc-agency-surat.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/services/local-seo-agency-surat.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/services/google-ads-management-india.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/services/crm-lead-routing-automation.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/industries/ev-marketing-agency-india.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/industries/showroom-marketing-agency-surat.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/industries/d2c-marketing-agency-india.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/industries/b2b-lead-generation-agency-india.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/industries/export-business-marketing-gujarat.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/industries/textile-marketing-agency-surat.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/global/google-ads-agency-usa.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/global/linkedin-ads-agency-usa.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/global/performance-marketing-agency-uk.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/case-studies/bajaj-chetak-ev-lead-generation.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/case-studies/bajaj-chetak-revenue-scale.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/case-studies/revolt-showroom-launch-surat.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/case-studies/revolt-motors-ev-marketing.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/case-studies/evanta-international-b2b-lead-generation.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/case-studies/jivan-amrut-d2c-launch.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/case-studies/ai-calling-agent-lead-qualification.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/case-studies/workflow-automation-crm-routing.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/resources/google-ads-audit-checklist.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/resources/lead-generation-funnel-audit.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/resources/how-to-reduce-cost-per-lead-google-ads.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/resources/landing-page-sections-for-lead-generation.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/resources/local-seo-checklist-surat-businesses.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/resources/ai-calling-agent-lead-qualification-guide.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/resources/utm-tracking-template-paid-ads.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/resources/b2b-linkedin-ads-playbook.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
