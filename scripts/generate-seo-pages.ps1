@@ -2,7 +2,7 @@ $ErrorActionPreference = "Stop"
 
 $root = Split-Path -Parent $PSScriptRoot
 $site = "https://wifmarketing.co"
-$lastmod = "2026-05-03"
+$lastmod = "2026-05-05"
 
 function RelPrefix([string]$Path) {
   if ($Path -like "*/*") { return "../" }
@@ -112,7 +112,7 @@ function RenderPage($Page) {
         "url": "$site/",
         "email": "business@wifmarketing.co",
         "telephone": "+91-9537192471",
-        "areaServed": ["Surat", "Gujarat", "India", "United States", "United Kingdom", "Canada", "Australia"],
+        "areaServed": ["Surat", "Gujarat", "India", "United States", "United Kingdom", "Canada", "Australia", "New Zealand"],
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Surat",
@@ -134,6 +134,7 @@ function RenderPage($Page) {
       <nav class="site-nav" id="site-menu" data-site-menu aria-label="Primary navigation">
         <a href="${prefix}services.html">Services</a>
         <a href="${prefix}case-studies.html">Case Studies</a>
+        <a href="${prefix}resources.html">Resources</a>
         <a href="${prefix}about.html">About</a>
         <a href="${prefix}contact.html">Contact</a>
         <a class="nav-cta" href="https://cal.com/wifmarketing/free-audit" target="_blank" rel="noopener noreferrer">Book Free Audit</a>
@@ -240,6 +241,7 @@ $faq
       <div><a href="${prefix}index.html" class="footer-brand"><img src="${prefix}assets/image/wif_marketing.png" alt="WIF Marketing" width="140" height="45" loading="lazy"></a><p>Performance marketing agency for paid ads, SEO growth pages, tracking, automation and revenue-focused reporting.</p></div>
       <div><h2>Services</h2><a href="${prefix}services/google-ads-agency-surat.html">Google Ads</a><a href="${prefix}services/seo-agency-surat.html">SEO</a><a href="${prefix}services/linkedin-ads-agency-india.html">LinkedIn Ads</a></div>
       <div><h2>Markets</h2><a href="${prefix}digital-marketing-agency-surat.html">Surat</a><a href="${prefix}performance-marketing-agency-surat.html">Performance Marketing</a><a href="${prefix}industries/ev-marketing-agency-india.html">EV Marketing</a></div>
+      <div><h2>Resources</h2><a href="${prefix}resources.html">Resource hub</a><a href="${prefix}resources/google-ads-audit-checklist.html">Google Ads audit</a><a href="${prefix}resources/local-seo-checklist-surat-businesses.html">Local SEO checklist</a></div>
       <div><h2>Contact</h2><a href="mailto:business@wifmarketing.co">business@wifmarketing.co</a><a href="tel:+919537192471">+91 95371 92471</a><span>Surat, Gujarat, India</span></div>
     </div>
     <div class="shell footer-bottom"><span>&copy; <span data-year></span> WIF Marketing.</span><span>Built for search, speed and conversion.</span></div>
@@ -649,7 +651,9 @@ $morePages = @(
   @{ Path="industries/textile-marketing-agency-surat.html"; Title="Textile Marketing Agency Surat | WIF Marketing"; Keyword="textile marketing agency Surat"; H1="Textile marketing agency in Surat for B2B and export lead generation."; Focus="Surat textile businesses can use SEO pages, LinkedIn outreach, Google intent and lead routing to reach buyers."; Image="assets/image/casestudy/Evanta International B2B Lead Generation.png"; ImageAlt="B2B marketing campaign visual"; ImageWidth="1535"; ImageHeight="1024" },
   @{ Path="global/google-ads-agency-usa.html"; Title="Google Ads Agency for US Businesses | WIF Marketing"; Keyword="Google Ads agency for US businesses"; H1="India-based Google Ads agency for US businesses."; Focus="WIF supports international Google Ads campaigns with search intent, landing page feedback and reporting discipline."; Image="assets/image/casestudy/Bajaj Chetak Lead Generation.png"; ImageAlt="Google Ads campaign visual"; ImageWidth="1586"; ImageHeight="992" },
   @{ Path="global/linkedin-ads-agency-usa.html"; Title="LinkedIn Ads Agency for US B2B Companies | WIF Marketing"; Keyword="LinkedIn Ads agency for US B2B companies"; H1="LinkedIn Ads agency for US B2B companies needing qualified leads."; Focus="B2B LinkedIn Ads require ICP clarity, offer testing, conversion pages and CRM-qualified reporting."; Image="assets/image/casestudy/Evanta International B2B Lead Generation.png"; ImageAlt="B2B LinkedIn lead generation visual"; ImageWidth="1535"; ImageHeight="1024" },
-  @{ Path="global/performance-marketing-agency-uk.html"; Title="Performance Marketing Agency for UK Companies | WIF Marketing"; Keyword="performance marketing agency for UK companies"; H1="India-based performance marketing agency for UK growth teams."; Focus="WIF can support UK-facing campaigns with paid acquisition, SEO pages, tracking and lead-response workflows."; Image="assets/image/casestudy/Workflow Automation.png"; ImageAlt="Marketing workflow automation visual"; ImageWidth="1586"; ImageHeight="992" }
+  @{ Path="global/performance-marketing-agency-uk.html"; Title="Performance Marketing Agency for UK Companies | WIF Marketing"; Keyword="performance marketing agency for UK companies"; H1="India-based performance marketing agency for UK growth teams."; Focus="WIF can support UK-facing campaigns with paid acquisition, SEO pages, tracking and lead-response workflows."; Image="assets/image/casestudy/Workflow Automation.png"; ImageAlt="Marketing workflow automation visual"; ImageWidth="1586"; ImageHeight="992" },
+  @{ Path="global/performance-marketing-agency-australia.html"; Title="Performance Marketing Agency for Australia | WIF Marketing"; Keyword="performance marketing agency Australia"; H1="India-based performance marketing agency for Australian growth teams."; Focus="WIF can support Australia-facing campaigns with paid acquisition, SEO pages, tracking and lead-response workflows."; Image="assets/image/casestudy/Evanta International B2B Lead Generation.png"; ImageAlt="International B2B lead generation campaign visual"; ImageWidth="1535"; ImageHeight="1024" },
+  @{ Path="global/performance-marketing-agency-new-zealand.html"; Title="Performance Marketing Agency for New Zealand | WIF Marketing"; Keyword="performance marketing agency New Zealand"; H1="India-based performance marketing agency for New Zealand growth teams."; Focus="WIF can support New Zealand-facing campaigns with paid acquisition, SEO pages, tracking and lead-response workflows."; Image="assets/image/casestudy/Workflow Automation.png"; ImageAlt="Marketing workflow automation visual"; ImageWidth="1586"; ImageHeight="992" }
 )
 
 foreach ($p in $morePages) {
@@ -698,6 +702,7 @@ $cases = @(
   @{ Path="case-studies/bajaj-chetak-ev-lead-generation.html"; Title="Bajaj Chetak EV Lead Generation Case Study | WIF Marketing"; H1="Bajaj Chetak EV lead generation case study."; Stat="800+ leads"; Image="assets/image/casestudy/Bajaj Chetak Lead Generation.png"; Alt="Bajaj Chetak lead generation campaign visual"; W="1586"; H="992"; Focus="WIF supported EV lead generation with paid acquisition and conversion-focused follow-up. Current site data reports 800+ leads at an 18.75% conversion rate." },
   @{ Path="case-studies/bajaj-chetak-revenue-scale.html"; Title="Bajaj Chetak Revenue Scale Case Study | WIF Marketing"; H1="Bajaj Chetak 90-day revenue scale case study."; Stat="Rs. 5 Cr+"; Image="assets/image/casestudy/Bajaj Chetak Revenue Scale.png"; Alt="Bajaj Chetak revenue scaling campaign visual"; W="1537"; H="1023"; Focus="The same EV acquisition system moved from lead volume into reported revenue performance, with current site data reporting Rs. 5 Cr+ in 90 days." },
   @{ Path="case-studies/revolt-showroom-launch-surat.html"; Title="Revolt Showroom Launch Surat Case Study | WIF Marketing"; H1="Revolt showroom launch case study in Surat."; Stat="Rs. 20L+"; Image="assets/image/casestudy/Revolt Showroom Launch.png"; Alt="Revolt showroom launch campaign visual"; W="1535"; H="1024"; Focus="The showroom campaign focused on local demand, launch visibility and conversion momentum. Current site data reports Rs. 20L+ in first-month revenue." },
+  @{ Path="case-studies/revolt-showroom-influencer-promotion-surat.html"; Title="Revolt Showroom Influencer Marketing Case Study Surat | WIF Marketing"; H1="Revolt showroom influencer marketing case study in Surat."; Stat="20-25+"; Image="assets/image/casestudy/Revolt Showroom Launch.png"; Alt="Revolt showroom influencer promotion visual"; W="1535"; H="1024"; Focus="WIF collaborated with 20 to 25+ local small-to-large influencers for Revolt showroom social media promotion, supporting local visibility, inquiries, footfall intent and sales conversations." },
   @{ Path="case-studies/revolt-motors-ev-marketing.html"; Title="Revolt Motors EV Marketing Case Study | WIF Marketing"; H1="Revolt Motors EV market entry case study."; Stat="Rs. 1 Cr+"; Image="assets/image/casestudy/revolt-ev.png"; Alt="Revolt Motors EV market entry campaign visual"; W="1586"; H="992"; Focus="Revolt Motors used WIF Marketing for launch and growth execution. Current site data reports Rs. 1 Cr+ revenue across six months." },
   @{ Path="case-studies/evanta-international-b2b-lead-generation.html"; Title="Evanta International B2B Lead Generation Case Study | WIF Marketing"; H1="Evanta International B2B lead generation case study."; Stat="Global"; Image="assets/image/casestudy/Evanta International B2B Lead Generation.png"; Alt="Evanta International B2B lead generation visual"; W="1535"; H="1024"; Focus="WIF helped strengthen international visibility and lead-generation momentum for a global B2B audience." },
   @{ Path="case-studies/jivan-amrut-d2c-launch.html"; Title="Jivan Amrut D2C Launch Case Study | WIF Marketing"; H1="Jivan Amrut D2C launch case study."; Stat="First sales"; Image="assets/image/casestudy/jivanmarut.png"; Alt="Jivan Amrut D2C launch campaign visual"; W="1586"; H="992"; Focus="WIF supported the Ayurveda brand in moving online, launching an MVP and reaching first buyers through digital acquisition." },
@@ -801,6 +806,7 @@ $baseUrls = @(
   @{ Loc="$site/"; Priority="1.0"; Change="weekly" },
   @{ Loc="$site/services.html"; Priority="0.9"; Change="weekly" },
   @{ Loc="$site/case-studies.html"; Priority="0.9"; Change="weekly" },
+  @{ Loc="$site/resources.html"; Priority="0.85"; Change="weekly" },
   @{ Loc="$site/about.html"; Priority="0.7"; Change="monthly" },
   @{ Loc="$site/contact.html"; Priority="0.8"; Change="monthly" },
   @{ Loc="$site/privacy-policy.html"; Priority="0.3"; Change="yearly" },

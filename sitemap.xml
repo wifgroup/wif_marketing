@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://wifmarketing.co/</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -14,9 +14,15 @@
   </url>
   <url>
     <loc>https://wifmarketing.co/case-studies.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/resources.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://wifmarketing.co/about.html</loc>
@@ -164,7 +170,19 @@
   </url>
   <url>
     <loc>https://wifmarketing.co/global/performance-marketing-agency-uk.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/global/performance-marketing-agency-australia.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/global/performance-marketing-agency-new-zealand.html</loc>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -183,6 +201,12 @@
   <url>
     <loc>https://wifmarketing.co/case-studies/revolt-showroom-launch-surat.html</loc>
     <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://wifmarketing.co/case-studies/revolt-showroom-influencer-promotion-surat.html</loc>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
