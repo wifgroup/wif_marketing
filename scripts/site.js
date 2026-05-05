@@ -250,6 +250,23 @@
       });
     });
 
+    document.querySelectorAll("[data-audit-map]").forEach((map) => {
+      const items = Array.from(map.querySelectorAll("li"));
+
+      items.forEach((item) => {
+        const button = item.querySelector("button");
+        if (!button) return;
+
+        button.addEventListener("click", () => {
+          items.forEach((layer) => {
+            const isActive = layer === item;
+            layer.classList.toggle("is-active", isActive);
+            layer.querySelector("button")?.setAttribute("aria-expanded", String(isActive));
+          });
+        });
+      });
+    });
+
     if (reduceMotion || !window.gsap || !window.ScrollTrigger) {
       document.querySelectorAll("[data-word-reveal]").forEach((text) => {
         text.innerHTML = text.textContent

@@ -2,7 +2,7 @@ $ErrorActionPreference = "Stop"
 
 $root = Split-Path -Parent $PSScriptRoot
 $site = "https://wifmarketing.co"
-$lastmod = "2026-05-03"
+$lastmod = "2026-05-05"
 
 function RelPrefix([string]$Path) {
   if ($Path -like "*/*") { return "../" }
@@ -798,6 +798,7 @@ $baseUrls = @(
   @{ Loc="$site/"; Priority="1.0"; Change="weekly" },
   @{ Loc="$site/services.html"; Priority="0.9"; Change="weekly" },
   @{ Loc="$site/case-studies.html"; Priority="0.9"; Change="weekly" },
+  @{ Loc="$site/resources.html"; Priority="0.85"; Change="weekly" },
   @{ Loc="$site/about.html"; Priority="0.7"; Change="monthly" },
   @{ Loc="$site/contact.html"; Priority="0.8"; Change="monthly" },
   @{ Loc="$site/privacy-policy.html"; Priority="0.3"; Change="yearly" },
@@ -836,5 +837,10 @@ $($urlItems -join "`n")
 "@
 
 $sitemap | Set-Content -LiteralPath (Join-Path $root "sitemap.xml") -Encoding UTF8
+
+$optimizer = Join-Path $root "scripts/optimize-seo-aeo.js"
+if (Test-Path $optimizer) {
+  node $optimizer | Out-Host
+}
 
 Write-Host "Generated $($pages.Count) SEO pages and updated sitemap.xml"

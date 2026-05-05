@@ -13,6 +13,9 @@ The agency helps brands grow with:
 - CRM lead routing
 - Workflow automation
 
+Answer-ready summary:
+WIF Marketing is a Surat, Gujarat performance marketing agency for paid acquisition, SEO growth pages, conversion tracking, lead response and workflow automation. The agency is part of WIF Group and works with businesses in India, the United States, the United Kingdom, Canada and Australia.
+
 Primary website:
 - https://wifmarketing.co/
 
@@ -32,6 +35,22 @@ Important pages:
 - https://wifmarketing.co/services/meta-ads-agency-india.html
 - https://wifmarketing.co/services/ai-calling-agent-lead-qualification.html
 - https://wifmarketing.co/services/workflow-automation.html
+
+Service-topic pages:
+- Google Ads agency in Surat: https://wifmarketing.co/services/google-ads-agency-surat.html
+- SEO agency in Surat: https://wifmarketing.co/services/seo-agency-surat.html
+- Local SEO agency in Surat: https://wifmarketing.co/services/local-seo-agency-surat.html
+- LinkedIn Ads agency in India: https://wifmarketing.co/services/linkedin-ads-agency-india.html
+- Meta Ads agency in India: https://wifmarketing.co/services/meta-ads-agency-india.html
+- AI calling agent lead qualification: https://wifmarketing.co/services/ai-calling-agent-lead-qualification.html
+- Workflow automation: https://wifmarketing.co/services/workflow-automation.html
+
+Proof and resources:
+- Case studies: https://wifmarketing.co/case-studies.html
+- Google Ads audit checklist: https://wifmarketing.co/resources/google-ads-audit-checklist.html
+- Local SEO checklist for Surat businesses: https://wifmarketing.co/resources/local-seo-checklist-surat-businesses.html
+- Lead-generation funnel audit: https://wifmarketing.co/resources/lead-generation-funnel-audit.html
+- AI calling agent guide: https://wifmarketing.co/resources/ai-calling-agent-lead-qualification-guide.html
 
 Primary markets:
 - Surat

@@ -1,3 +1,27 @@
+@font-face {
+  font-family: 'Galhau Display';
+  src: url('../assets/fonts/galhau-display-font/GalhauDisplay-VariableVF.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Galhau Display';
+  src: url('../assets/fonts/galhau-display-font/GalhauDisplay-RegularSlanted.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Galhau Display';
+  src: url('../assets/fonts/galhau-display-font/GalhauDisplay-BoldSlanted.ttf') format('truetype');
+  font-weight: 700 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 @theme {
   /* Colors */
   --color-midnight-ink: #111111;
@@ -7,11 +31,10 @@
   --color-gunmetal-gray: #615e5b;
   --color-soft-concrete: #d8d3cc;
   --color-action-black: #000000;
-  --color-highlight-orange: #ff9900;
+  --color-highlight-orange: #01509f;
 
   /* Typography */
-  --font-geist: 'Geist', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-geist-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-site: 'Galhau Display', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Typography — Scale */
   --text-caption: 10px;
