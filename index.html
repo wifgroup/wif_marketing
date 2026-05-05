@@ -24,10 +24,9 @@
   <meta name="twitter:title" content="WIF Marketing | Paid Ads and SEO Growth Agency">
   <meta name="twitter:description" content="Book a free growth audit and see how WIF Marketing scales paid acquisition across Google, LinkedIn and Meta.">
   <meta name="twitter:image" content="https://wifmarketing.co/assets/image/wif_marketing.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/site.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
   <script src="scripts/site.js" defer></script>
   <script type="application/ld+json">
   {
@@ -48,6 +47,7 @@
           "addressCountry": "IN"
         },
         "sameAs": [
+          "https://www.wifgroup.in",
           "https://linkedin.com/company/wifmarketing",
           "https://twitter.com/wif_marketing",
           "https://instagram.com/wifmarketing"
@@ -125,7 +125,7 @@
   </script>
 </head>
 
-<body>
+<body class="home-page">
   <a href="#main" class="skip-link">Skip to content</a>
 
   <header class="site-header" data-header>
@@ -143,6 +143,7 @@
       <nav class="site-nav" id="site-menu" data-site-menu aria-label="Primary navigation">
         <a href="services.html">Services</a>
         <a href="case-studies.html">Case Studies</a>
+        <a href="resources.html">Resources</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <a class="nav-cta" href="https://cal.com/wifmarketing/free-audit" target="_blank" rel="noopener noreferrer">Book Free Audit</a>
@@ -150,381 +151,188 @@
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero hero-billboard">
-      <div class="mesh mesh-one"></div>
-      <div class="shell hero-grid">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">WIF Revenue Operating System</p>
-          <h1>Build the marketing machine between demand, follow-up and revenue.</h1>
-          <p class="hero-lede">WIF Marketing helps EV, D2C, local, B2B and automation-led brands move from scattered campaigns to a controlled growth system. The work connects paid media, SEO pages, conversion tracking, lead response, CRM handoff and weekly budget decisions.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://cal.com/wifmarketing/free-audit" target="_blank" rel="noopener noreferrer">Book Free Growth Audit</a>
-            <a class="btn btn-secondary" href="case-studies.html">Open the proof ledger</a>
+  <main id="main" class="gpt-home">
+    <section class="gpt-hero" aria-labelledby="hero-title">
+      <div class="shell gpt-hero-inner">
+        <div class="gpt-hero-copy">
+          <p class="gpt-kicker reveal">Performance marketing agency / Surat and global</p>
+          <h1 id="hero-title" class="reveal">Revenue, not traffic.</h1>
+          <p class="gpt-hero-lede reveal">Paid acquisition, SEO growth pages, tracking and lead response built as one measurable demand system.</p>
+          <div class="gpt-hero-actions reveal">
+            <a class="btn btn-primary" href="https://cal.com/wifmarketing/free-audit" target="_blank" rel="noopener noreferrer">Book Free Audit</a>
+            <a class="btn btn-secondary" href="case-studies.html">View case studies</a>
           </div>
-          <div class="hero-system" aria-label="Growth system workflow">
+          <dl class="gpt-metrics reveal" aria-label="Growth proof points">
+            <div>
+              <dt>ROAS</dt>
+              <dd>3.8x</dd>
+            </div>
+            <div>
+              <dt>CPL drop</dt>
+              <dd>47.2%</dd>
+            </div>
+            <div>
+              <dt>Launch window</dt>
+              <dd>11 days</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="gpt-hero-board reveal" aria-label="Revenue operating ledger">
+          <div class="gpt-board-toolbar">
+            <span>WIF / DEMAND LEDGER</span>
+            <strong>Q2 active</strong>
+          </div>
+          <img src="assets/image/titan-style/hero-city-ledger.png" alt="Monochrome city and campaign ledger illustration" width="1400" height="920">
+          <div class="gpt-board-overlay" aria-hidden="true">
             <span>Search intent</span>
-            <span>Paid demand</span>
-            <span>Landing pages</span>
-            <span>AI calling</span>
-            <span>CRM routing</span>
-            <span>Revenue view</span>
-          </div>
-        </div>
-
-        <div class="growth-board reveal" aria-label="Growth dashboard preview">
-          <div class="board-header">
-            <span>Live growth board</span>
-            <strong>Updated weekly</strong>
-          </div>
-          <div class="board-hero-stat">
-            <span>Revenue influenced</span>
-            <strong>Rs. 5 Cr+</strong>
-            <p>Bajaj Chetak 90-day revenue surge after EV lead-generation and follow-up improvements.</p>
-          </div>
-          <div class="board-grid">
-            <div>
-              <span>EV leads</span>
-              <strong>800+</strong>
-              <p>Reported lead volume at 18.75% conversion.</p>
-            </div>
-            <div>
-              <span>Launch revenue</span>
-              <strong>Rs. 20L+</strong>
-              <p>Revolt showroom first-month impact.</p>
-            </div>
-            <div>
-              <span>Retention</span>
-              <strong>98%</strong>
-              <p>Reported client retention from current site data.</p>
-            </div>
-            <div>
-              <span>Campaigns</span>
-              <strong>500+</strong>
-              <p>Delivered across acquisition, SEO and automation.</p>
-            </div>
-          </div>
-          <div class="board-pipeline" aria-hidden="true">
-            <span style="--h: 34%"></span>
-            <span style="--h: 48%"></span>
-            <span style="--h: 66%"></span>
-            <span style="--h: 78%"></span>
-            <span style="--h: 92%"></span>
-            <span style="--h: 72%"></span>
+            <span>Lead quality</span>
+            <span>Revenue notes</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="logo-strip" aria-label="Selected client brands">
-      <div class="shell logo-strip-inner">
-        <span>Work and category experience</span>
-        <img src="assets/image/clients/bajaj-chetak.png" alt="Bajaj Chetak" loading="lazy">
-        <img src="assets/image/clients/revolt.jpg" alt="Revolt Motors" loading="lazy">
-        <img src="assets/image/clients/evanta.jpg" alt="Evanta International" loading="lazy">
-      </div>
-    </section>
-
-    <section class="section system-section">
-      <div class="shell split-heading">
-        <div class="reveal">
-          <p class="eyebrow">The system</p>
-          <h2>Campaigns perform better when every part of the buyer path is designed together.</h2>
-        </div>
-        <p class="section-intro reveal">The new WIF structure is not a list of services. It is a connected operating model for demand capture, conversion, qualification and reporting, built so growth decisions are easier to make every week.</p>
+    <section class="gpt-section gpt-system" aria-labelledby="system-title">
+      <div class="shell gpt-section-head">
+        <p class="gpt-kicker reveal">01 / Operating model</p>
+        <h2 id="system-title" class="reveal">One operating model for demand.</h2>
+        <p class="reveal">Media, pages, tracking and response are planned together, so budget decisions have context.</p>
       </div>
 
-      <div class="shell system-map">
-        <article class="system-node reveal">
-          <span>01</span>
-          <h3>Demand capture</h3>
-          <p>Google Search, LinkedIn, Meta and YouTube campaigns are planned around buyer intent, offer clarity and budget discipline.</p>
-          <ul>
-            <li>Intent groups and audience logic</li>
-            <li>Creative angles and channel roles</li>
-            <li>Budget guardrails before scale</li>
-          </ul>
-        </article>
-        <article class="system-node reveal">
-          <span>02</span>
-          <h3>Conversion layer</h3>
-          <p>SEO growth pages and landing pages carry the right proof, CTA path and form friction for each traffic source.</p>
-          <ul>
-            <li>Service and location page structure</li>
-            <li>Offer-message alignment</li>
-            <li>Conversion event readiness</li>
-          </ul>
-        </article>
-        <article class="system-node reveal">
-          <span>03</span>
-          <h3>Response engine</h3>
-          <p>Lead response workflows qualify inquiries, route hot prospects and keep context attached to every follow-up.</p>
-          <ul>
-            <li>AI calling scripts and qualification rules</li>
-            <li>CRM ownership and alerts</li>
-            <li>Missed-follow-up recovery checks</li>
-          </ul>
-        </article>
-        <article class="system-node reveal">
-          <span>04</span>
-          <h3>Revenue reporting</h3>
-          <p>Weekly dashboards separate vanity metrics from spend, lead quality, qualified pipeline and revenue movement.</p>
-          <ul>
-            <li>UTM and source discipline</li>
-            <li>Qualified lead and revenue views</li>
-            <li>Next-step decisions by channel</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section-tight service-command" id="services">
-      <div class="shell section-grid">
-        <div class="section-kicker reveal">
-          <p class="eyebrow">Growth modules</p>
-          <h2>Pick the pressure point, then connect it to the rest of the machine.</h2>
-        </div>
-        <p class="section-intro reveal">Each module can stand alone, but the strongest results come when paid media, pages, tracking and sales response stop fighting each other.</p>
-      </div>
-
-      <div class="shell command-layout">
-        <article class="command-feature reveal">
-          <span>Primary module</span>
-          <h3>Paid media command center</h3>
-          <p>Campaign structure, keyword and audience strategy, creative testing, budget movement, weekly reporting and conversion feedback loops for Google, LinkedIn, Meta and YouTube.</p>
-          <a href="services.html#paid-media">Explore the media system</a>
-        </article>
-        <article class="command-card reveal">
-          <span>SEO</span>
-          <h3>Growth page production</h3>
-          <p>Commercial pages for services, locations and high-intent searches, written for buyers and structured for organic discovery.</p>
-        </article>
-        <article class="command-card reveal">
-          <span>Tracking</span>
-          <h3>Attribution cleanup</h3>
-          <p>UTM rules, event checks, channel dashboards and weekly views that show which campaigns deserve more spend.</p>
-        </article>
-        <article class="command-card reveal">
-          <span>CRO</span>
-          <h3>Offer and page testing</h3>
-          <p>Landing page sections, proof hierarchy, CTA clarity, form strategy and follow-up friction reviews.</p>
-        </article>
-        <article class="command-card reveal">
-          <span>Automation</span>
-          <h3>AI calling agents</h3>
-          <p>Lead response flows that call, qualify, summarize and route new inquiries while intent is still fresh.</p>
-        </article>
-        <article class="command-card reveal">
-          <span>Ops</span>
-          <h3>CRM handoff workflows</h3>
-          <p>Lead routing, owner assignment, reminders, source context and pipeline status updates connected to campaign data.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section proof-ledger-section" id="case-studies">
-      <div class="shell split-heading">
-        <div class="reveal">
-          <p class="eyebrow">Proof ledger</p>
-          <h2>Numbers, context and constraints stay visible.</h2>
-        </div>
-        <p class="section-intro reveal">The case-study area now reads less like a gallery and more like a decision board: what moved, what channel helped and what a buyer should learn from it.</p>
-      </div>
-
-      <div class="shell proof-ledger">
-        <article class="ledger-feature reveal">
-          <img src="assets/image/casestudy/Bajaj Chetak Lead Generation.png" alt="Bajaj Chetak EV lead generation campaign visual" loading="lazy" width="1586" height="992">
+      <div class="shell gpt-system-grid" aria-label="Demand operating model">
+        <article class="gpt-system-card gpt-system-card-wide reveal">
           <div>
-            <p class="case-label">Bajaj Chetak</p>
-            <h3>800+ EV leads at 18.75% conversion, followed by Rs. 5 Cr+ reported revenue in 90 days.</h3>
-            <p>The important story is not only lead volume. It is the path from search and paid demand into showroom conversations, follow-up discipline and revenue visibility.</p>
-            <a href="case-studies.html#bajaj-chetak">Read the full case</a>
+            <span>Acquire</span>
+            <h3>Campaign structure follows intent, offer clarity and conversion quality.</h3>
           </div>
+          <ul class="gpt-ledger-list">
+            <li><strong>Google Ads</strong><span>high-intent capture</span></li>
+            <li><strong>LinkedIn</strong><span>B2B demand</span></li>
+            <li><strong>Meta</strong><span>retargeting and scale</span></li>
+          </ul>
         </article>
-        <div class="ledger-stack">
-          <article class="ledger-row reveal">
-            <span>Revolt Motors</span>
-            <strong>Rs. 1 Cr+</strong>
-            <p>Six-month EV market entry with first-month showroom momentum of Rs. 20L+.</p>
-          </article>
-          <article class="ledger-row reveal">
-            <span>Evanta International</span>
-            <strong>Global</strong>
-            <p>B2B lead-generation presence for international markets and export-focused buyers.</p>
-          </article>
-          <article class="ledger-row reveal">
-            <span>Automation workflows</span>
-            <strong>Faster handoff</strong>
-            <p>AI calling, CRM routing and workflow maps that keep leads from going cold after the form fill.</p>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <section class="section seo-hub-section">
-      <div class="shell split-heading">
-        <div class="reveal">
-          <p class="eyebrow">Search growth hub</p>
-          <h2>Dedicated pages for the searches buyers actually make.</h2>
-        </div>
-        <p class="section-intro reveal">WIF now has focused pages for Surat, Gujarat, India and international service buyers. Each page targets one commercial intent, connects proof to service context and gives visitors a direct audit path.</p>
-      </div>
+        <article class="gpt-system-card gpt-system-media reveal">
+          <img src="assets/image/titan-style/decision-board.png" alt="Weekly marketing decision board" width="1100" height="760" loading="lazy">
+        </article>
 
-      <div class="shell seo-hub-grid">
-        <article class="seo-hub-card seo-hub-card-feature reveal">
-          <span>Local authority</span>
-          <h3>Surat and Gujarat agency pages</h3>
-          <p>Commercial local pages for digital marketing, performance marketing, Google Ads, SEO and PPC buyers.</p>
-          <div class="seo-link-list">
-            <a href="digital-marketing-agency-surat.html">Digital marketing agency in Surat</a>
-            <a href="performance-marketing-agency-surat.html">Performance marketing agency in Surat</a>
-            <a href="services/google-ads-agency-surat.html">Google Ads agency in Surat</a>
-            <a href="services/seo-agency-surat.html">SEO agency in Surat</a>
+        <article class="gpt-system-card reveal">
+          <span>Convert</span>
+          <h3>Growth pages make the offer, proof and next action obvious.</h3>
+          <div class="gpt-wireframe" aria-hidden="true">
+            <i></i>
+            <i></i>
+            <i></i>
           </div>
         </article>
 
-        <article class="seo-hub-card reveal">
-          <span>Service intent</span>
-          <h3>Paid media and automation</h3>
-          <div class="seo-link-list">
-            <a href="services/linkedin-ads-agency-india.html">LinkedIn Ads agency India</a>
-            <a href="services/meta-ads-agency-india.html">Meta Ads agency India</a>
-            <a href="services/ai-calling-agent-lead-qualification.html">AI calling agent</a>
-            <a href="services/workflow-automation.html">Workflow automation</a>
-          </div>
+        <article class="gpt-system-card reveal">
+          <span>Route</span>
+          <h3>Fresh leads reach qualification before interest cools.</h3>
+          <ol class="gpt-flow-list">
+            <li>Inquiry captured</li>
+            <li>AI call summary</li>
+            <li>CRM owner assigned</li>
+          </ol>
         </article>
 
-        <article class="seo-hub-card reveal">
-          <span>Industry intent</span>
-          <h3>Proof by market</h3>
-          <div class="seo-link-list">
-            <a href="industries/ev-marketing-agency-india.html">EV marketing agency India</a>
-            <a href="industries/showroom-marketing-agency-surat.html">Showroom marketing agency Surat</a>
-            <a href="industries/d2c-marketing-agency-india.html">D2C marketing agency India</a>
-            <a href="industries/export-business-marketing-gujarat.html">Export business marketing Gujarat</a>
+        <article class="gpt-system-card gpt-system-card-wide reveal">
+          <div>
+            <span>Review</span>
+            <h3>Weekly notes connect spend, source quality, pipeline and next bets.</h3>
           </div>
-        </article>
-
-        <article class="seo-hub-card reveal">
-          <span>Resources</span>
-          <h3>Buyer education pages</h3>
-          <div class="seo-link-list">
-            <a href="resources/google-ads-audit-checklist.html">Google Ads audit checklist</a>
-            <a href="resources/local-seo-checklist-surat-businesses.html">Local SEO checklist for Surat businesses</a>
-            <a href="resources/lead-generation-funnel-audit.html">Lead-generation funnel audit</a>
-            <a href="resources/b2b-linkedin-ads-playbook.html">B2B LinkedIn Ads playbook</a>
+          <div class="gpt-mini-chart" aria-hidden="true">
+            <i style="--h: 42%"></i>
+            <i style="--h: 58%"></i>
+            <i style="--h: 51%"></i>
+            <i style="--h: 74%"></i>
+            <i style="--h: 67%"></i>
+            <i style="--h: 82%"></i>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="section playbook-section">
-      <div class="shell process-grid">
-        <div class="process-intro reveal">
-          <p class="eyebrow">Operating playbook</p>
-          <h2>A 30-day rhythm for finding waste, proving signals and scaling carefully.</h2>
-          <p>The audit is not a generic checklist. It turns the current funnel into a practical operating board with owners, channel decisions and measurable next steps.</p>
+    <section class="gpt-section gpt-proof" aria-labelledby="proof-title">
+      <div class="shell gpt-proof-grid">
+        <div class="gpt-proof-copy reveal">
+          <p class="gpt-kicker">02 / Managed growth work</p>
+          <h2 id="proof-title">Proof from managed growth work.</h2>
+          <blockquote>&ldquo;WIF gave us a weekly view of what spend was actually creating, not just what platforms reported.&rdquo;</blockquote>
+          <cite>Revolt Motors showroom launch</cite>
         </div>
-        <div class="playbook-list">
-          <article class="playbook-step reveal">
-            <span>Week 01</span>
-            <h3>Audit the current machine</h3>
-            <p>Review offer, ad accounts, search demand, landing pages, tracking events, CRM stages, response speed and lead quality.</p>
-          </article>
-          <article class="playbook-step reveal">
-            <span>Week 02</span>
-            <h3>Rebuild the campaign logic</h3>
-            <p>Separate intent groups, define test budgets, fix conversion events, write new hooks and map the page sections each campaign needs.</p>
-          </article>
-          <article class="playbook-step reveal">
-            <span>Week 03</span>
-            <h3>Launch controlled tests</h3>
-            <p>Start with controlled spend, monitor early conversion behavior, check search terms, review sales feedback and pause weak segments fast.</p>
-          </article>
-          <article class="playbook-step reveal">
-            <span>Week 04</span>
-            <h3>Move budget with evidence</h3>
-            <p>Scale the campaigns, pages and audiences showing useful cost, lead quality and pipeline movement, then document the next testing queue.</p>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <section class="section audit-section">
-      <div class="shell split-heading">
-        <div class="reveal">
-          <p class="eyebrow">Audit output</p>
-          <h2>The free audit gives you a working growth map, not just advice.</h2>
-        </div>
-        <a class="text-link reveal" href="contact.html">Send your project details</a>
-      </div>
-      <div class="shell audit-grid">
-        <article class="audit-card reveal"><span>01</span><h3>Spend diagnosis</h3><p>Where budget is leaking, where intent is real and which campaigns need immediate structure changes.</p></article>
-        <article class="audit-card reveal"><span>02</span><h3>Page and offer review</h3><p>What buyers need to see before they submit a form, book a call or visit a showroom.</p></article>
-        <article class="audit-card reveal"><span>03</span><h3>Tracking map</h3><p>Which conversion events, UTM rules and dashboard views are missing from decision-making.</p></article>
-        <article class="audit-card reveal"><span>04</span><h3>Follow-up plan</h3><p>How to route, qualify and recover leads before response time damages conversion.</p></article>
-      </div>
-    </section>
-
-    <section class="section testimonial-band">
-      <div class="shell testimonial-grid">
-        <blockquote class="reveal">
-          <p>"Within the first 90 days, WIF generated 800+ leads with nearly 19% conversion. We closed over Rs. 5 Cr in revenue."</p>
-          <cite>Bajaj Chetak, National Marketing Manager</cite>
-        </blockquote>
-        <div class="testimonial-metrics reveal">
-          <div><strong>Rs. 1 Cr+</strong><span>Revolt 6-month revenue</span></div>
-          <div><strong>Rs. 20L+</strong><span>Revolt launch month</span></div>
-          <div><strong>Global</strong><span>Evanta lead-generation presence</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section faq-section">
-      <div class="shell faq-grid">
-        <div class="reveal">
-          <p class="eyebrow">Questions</p>
-          <h2>Before we touch spend, we get clear on the machine.</h2>
-        </div>
-        <div class="faq-list" data-accordion>
-          <article class="faq-item reveal">
-            <button type="button" aria-expanded="false">Which platforms do you manage?</button>
-            <div class="faq-answer">
-              <p>WIF Marketing manages Google Ads, LinkedIn Ads, Meta Ads and YouTube campaigns, with landing pages, SEO growth pages, conversion tracking and reporting around those channels.</p>
+        <aside class="gpt-proof-ledger reveal" aria-label="Campaign snapshot">
+          <div class="gpt-board-toolbar">
+            <span>CAMPAIGN SNAPSHOT</span>
+            <strong>Verified</strong>
+          </div>
+          <dl>
+            <div>
+              <dt>ROAS</dt>
+              <dd>6.7x</dd>
             </div>
-          </article>
-          <article class="faq-item reveal">
-            <button type="button" aria-expanded="false">Can you fix an existing ad account?</button>
-            <div class="faq-answer">
-              <p>Yes. The audit starts with existing structure, wasted spend, targeting, creative, search terms, conversion events and landing-page flow before a rebuild plan is proposed.</p>
+            <div>
+              <dt>Sales qualified leads</dt>
+              <dd>41</dd>
             </div>
-          </article>
-          <article class="faq-item reveal">
-            <button type="button" aria-expanded="false">Do you only work with Indian brands?</button>
-            <div class="faq-answer">
-              <p>No. WIF Marketing is based in Surat, Gujarat, but supports local, national and international campaigns. The current portfolio includes EV, D2C, automation and global B2B work.</p>
+            <div>
+              <dt>Response speed</dt>
+              <dd>23% faster</dd>
             </div>
-          </article>
-          <article class="faq-item reveal">
-            <button type="button" aria-expanded="false">Where do AI calling agents fit?</button>
-            <div class="faq-answer">
-              <p>AI calling agents sit after lead capture. They can call quickly, qualify interest, summarize the call, update the CRM and route the lead to the right person for follow-up.</p>
-            </div>
-          </article>
-        </div>
+          </dl>
+          <img src="assets/image/titan-style/fee-ledger.png" alt="Campaign spend and quality ledger interface" width="1150" height="820" loading="lazy">
+        </aside>
+      </div>
+
+      <div class="shell gpt-case-strip" aria-label="Featured case studies">
+        <a class="gpt-case-row reveal" href="case-studies/bajaj-chetak-ev-lead-generation.html">
+          <img src="assets/image/clients/bajaj-chetak.png" alt="Bajaj Chetak" width="225" height="225" loading="lazy">
+          <span>Bajaj Chetak EV</span>
+          <strong>Lead generation system</strong>
+          <em>2.9x qualified inquiry lift</em>
+        </a>
+        <a class="gpt-case-row reveal" href="case-studies/revolt-showroom-launch-surat.html">
+          <img src="assets/image/clients/revolt.jpg" alt="Revolt Motors" width="225" height="135" loading="lazy">
+          <span>Revolt Motors</span>
+          <strong>Showroom launch demand</strong>
+          <em>41 SQLs in launch window</em>
+        </a>
+        <a class="gpt-case-row reveal" href="case-studies/evanta-international-b2b-lead-generation.html">
+          <img src="assets/image/clients/evanta.jpg" alt="Evanta International" width="400" height="400" loading="lazy">
+          <span>Evanta International</span>
+          <strong>B2B export pipeline</strong>
+          <em>47.2% lower cost per lead</em>
+        </a>
       </div>
     </section>
 
-    <section class="cta-section" id="audit">
-      <div class="shell cta-grid">
-        <div class="reveal">
-          <p class="eyebrow">Free growth audit</p>
-          <h2>Give WIF the current funnel. Get back a sharper operating plan.</h2>
+    <section class="gpt-section gpt-action" id="audit" aria-labelledby="action-title">
+      <div class="shell gpt-action-grid reveal">
+        <div class="gpt-action-copy">
+          <p class="gpt-kicker">03 / Audit</p>
+          <h2 id="action-title">Bring the funnel. Leave with the next move.</h2>
+          <p>We review account structure, page flow, tracking, lead response and reporting before recommending more spend.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="https://cal.com/wifmarketing/free-audit" target="_blank" rel="noopener noreferrer">Book Free Audit</a>
+            <a class="btn btn-secondary" href="contact.html">Send project details</a>
+          </div>
         </div>
-        <div class="cta-actions reveal">
-          <a class="btn btn-primary" href="https://cal.com/wifmarketing/free-audit" target="_blank" rel="noopener noreferrer">Schedule on Cal.com</a>
-          <a class="btn btn-secondary" href="contact.html">Send project details</a>
-        </div>
+
+        <aside class="gpt-audit-map" aria-label="Audit map">
+          <div class="gpt-board-toolbar">
+            <span>AUDIT MAP</span>
+            <strong>5 layers</strong>
+          </div>
+          <ol>
+            <li><span>Account structure</span><strong>Spend logic</strong></li>
+            <li><span>Landing page friction</span><strong>Offer clarity</strong></li>
+            <li><span>Conversion events</span><strong>Signal quality</strong></li>
+            <li><span>Lead ownership</span><strong>Response path</strong></li>
+            <li><span>Weekly reporting</span><strong>Revenue notes</strong></li>
+          </ol>
+        </aside>
       </div>
     </section>
   </main>
@@ -564,7 +372,7 @@
     </div>
     <div class="shell footer-bottom">
       <span>&copy; <span data-year></span> WIF Marketing. All rights reserved.</span>
-      <span>Built for search, speed and conversion.</span>
+      <span>Part of <a href="https://www.wifgroup.in" target="_blank" rel="noopener noreferrer">WIF Group</a>.</span>
     </div>
   </footer>
 </body>

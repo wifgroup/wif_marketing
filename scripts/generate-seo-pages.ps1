@@ -79,9 +79,6 @@ function RenderPage($Page) {
   <meta property="og:type" content="website">
   <meta property="og:url" content="$canonical">
   <meta property="og:image" content="$site/assets/image/wif_marketing.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="${prefix}styles/site.css">
   <script src="${prefix}scripts/site.js" defer></script>
   <script type="application/ld+json">

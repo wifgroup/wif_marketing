@@ -51,11 +51,46 @@
   syncHeader();
   window.addEventListener("scroll", syncHeader, { passive: true });
 
-  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+  const parallaxTargets = reduceMotion ? [] : Array.from(document.querySelectorAll("[data-parallax]"));
+  let parallaxTicking = false;
+
+  const syncParallax = () => {
+    parallaxTicking = false;
+    if (!parallaxTargets.length) return;
+    const viewportCenter = window.innerHeight / 2;
+
+    parallaxTargets.forEach((target) => {
+      const rect = target.getBoundingClientRect();
+      const speed = Number(target.dataset.parallax || 0);
+      const distance = rect.top + rect.height / 2 - viewportCenter;
+      target.style.setProperty("--parallax-y", String(Math.round(distance * speed)));
+    });
+  };
+
+  const requestParallax = () => {
+    if (parallaxTicking) return;
+    parallaxTicking = true;
+    window.requestAnimationFrame(syncParallax);
+  };
+
+  if (parallaxTargets.length) {
+    syncParallax();
+    window.addEventListener("scroll", requestParallax, { passive: true });
+    window.addEventListener("resize", requestParallax);
+  }
+
+  const pathname = window.location.pathname;
+  const currentPath = pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".site-nav a").forEach((link) => {
     const href = link.getAttribute("href") || "";
     const hrefPath = href.split("#")[0];
-    if (hrefPath && hrefPath === currentPath) {
+    const normalizedHref = hrefPath.replace(/^\.\.\//, "");
+    const isSectionParent =
+      (pathname.includes("/services/") && normalizedHref === "services.html") ||
+      (pathname.includes("/case-studies/") && normalizedHref === "case-studies.html") ||
+      (pathname.includes("/resources/") && normalizedHref === "resources.html");
+
+    if (hrefPath && (hrefPath === currentPath || normalizedHref === currentPath || isSectionParent)) {
       link.classList.add("is-active");
     }
   });
@@ -201,4 +236,88 @@
       }
     });
   });
+
+  const initGptHome = () => {
+    const home = document.querySelector(".gpt-home");
+    if (!home) return;
+
+    document.querySelectorAll(".gpt-accordion-card").forEach((card) => {
+      card.addEventListener("mouseenter", () => {
+        document.querySelectorAll(".gpt-accordion-card").forEach((item) => item.classList.toggle("is-active", item === card));
+      });
+      card.addEventListener("focusin", () => {
+        document.querySelectorAll(".gpt-accordion-card").forEach((item) => item.classList.toggle("is-active", item === card));
+      });
+    });
+
+    if (reduceMotion || !window.gsap || !window.ScrollTrigger) {
+      document.querySelectorAll("[data-word-reveal]").forEach((text) => {
+        text.innerHTML = text.textContent
+          .trim()
+          .split(/\s+/)
+          .map((word) => `<span>${word}</span>`)
+          .join(" ");
+      });
+      return;
+    }
+
+    const { gsap, ScrollTrigger } = window;
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.fromTo(
+      ".gpt-hero-bg img",
+      { scale: 1.12, opacity: 0.35 },
+      {
+        scale: 1.04,
+        opacity: 0.55,
+        duration: 1.35,
+        ease: "power3.out"
+      }
+    );
+
+    document.querySelectorAll("[data-word-reveal]").forEach((text) => {
+      const words = text.textContent.trim().split(/\s+/);
+      text.innerHTML = words.map((word) => `<span>${word}</span>`).join(" ");
+
+      gsap.to(text.querySelectorAll("span"), {
+        opacity: 1,
+        stagger: 0.035,
+        ease: "none",
+        scrollTrigger: {
+          trigger: text,
+          start: "top 78%",
+          end: "bottom 42%",
+          scrub: true
+        }
+      });
+    });
+
+    document.querySelectorAll("[data-gsap-pin]").forEach((section) => {
+      const pinCopy = section.querySelector("[data-pin-copy]");
+      if (!pinCopy || window.innerWidth < 981) return;
+
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top top+=96",
+        end: "bottom bottom",
+        pin: pinCopy,
+        pinSpacing: false
+      });
+    });
+
+    document.querySelectorAll("[data-scale-media] img").forEach((image) => {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: image,
+          start: "top 88%",
+          end: "bottom 12%",
+          scrub: true
+        }
+      })
+        .fromTo(image, { scale: 0.8, opacity: 0.38, filter: "grayscale(1) contrast(1.12) brightness(0.72)" }, { scale: 1, opacity: 1, filter: "grayscale(0.2) contrast(1.08) brightness(1)", duration: 0.55, ease: "none" })
+        .to(image, { scale: 0.96, opacity: 0.2, filter: "grayscale(1) contrast(1.12) brightness(0.45)", duration: 0.45, ease: "none" });
+    });
+  };
+
+  initGptHome();
 })();
