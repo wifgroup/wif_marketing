@@ -2,7 +2,7 @@ $ErrorActionPreference = "Stop"
 
 $root = Split-Path -Parent $PSScriptRoot
 $site = "https://wifmarketing.co"
-$lastmod = "2026-05-05"
+$lastmod = "2026-05-06"
 
 function RelPrefix([string]$Path) {
   if ($Path -like "*/*") { return "../" }
@@ -109,7 +109,7 @@ function RenderPage($Page) {
         "url": "$site/",
         "email": "business@wifmarketing.co",
         "telephone": "+91-9537192471",
-        "areaServed": ["Surat", "Gujarat", "India", "United States", "United Kingdom", "Canada", "Australia"],
+        "areaServed": ["Surat", "Gujarat", "India", "United States", "United Kingdom", "Canada", "Australia", "New Zealand"],
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Surat",
@@ -131,6 +131,7 @@ function RenderPage($Page) {
       <nav class="site-nav" id="site-menu" data-site-menu aria-label="Primary navigation">
         <a href="${prefix}services.html">Services</a>
         <a href="${prefix}case-studies.html">Case Studies</a>
+        <a href="${prefix}resources.html">Resources</a>
         <a href="${prefix}about.html">About</a>
         <a href="${prefix}contact.html">Contact</a>
         <a class="nav-cta" href="https://cal.com/wifmarketing/free-audit" target="_blank" rel="noopener noreferrer">Book Free Audit</a>
@@ -646,7 +647,11 @@ $morePages = @(
   @{ Path="industries/textile-marketing-agency-surat.html"; Title="Textile Marketing Agency Surat | WIF Marketing"; Keyword="textile marketing agency Surat"; H1="Textile marketing agency in Surat for B2B and export lead generation."; Focus="Surat textile businesses can use SEO pages, LinkedIn outreach, Google intent and lead routing to reach buyers."; Image="assets/image/casestudy/Evanta International B2B Lead Generation.png"; ImageAlt="B2B marketing campaign visual"; ImageWidth="1535"; ImageHeight="1024" },
   @{ Path="global/google-ads-agency-usa.html"; Title="Google Ads Agency for US Businesses | WIF Marketing"; Keyword="Google Ads agency for US businesses"; H1="India-based Google Ads agency for US businesses."; Focus="WIF supports international Google Ads campaigns with search intent, landing page feedback and reporting discipline."; Image="assets/image/casestudy/Bajaj Chetak Lead Generation.png"; ImageAlt="Google Ads campaign visual"; ImageWidth="1586"; ImageHeight="992" },
   @{ Path="global/linkedin-ads-agency-usa.html"; Title="LinkedIn Ads Agency for US B2B Companies | WIF Marketing"; Keyword="LinkedIn Ads agency for US B2B companies"; H1="LinkedIn Ads agency for US B2B companies needing qualified leads."; Focus="B2B LinkedIn Ads require ICP clarity, offer testing, conversion pages and CRM-qualified reporting."; Image="assets/image/casestudy/Evanta International B2B Lead Generation.png"; ImageAlt="B2B LinkedIn lead generation visual"; ImageWidth="1535"; ImageHeight="1024" },
-  @{ Path="global/performance-marketing-agency-uk.html"; Title="Performance Marketing Agency for UK Companies | WIF Marketing"; Keyword="performance marketing agency for UK companies"; H1="India-based performance marketing agency for UK growth teams."; Focus="WIF can support UK-facing campaigns with paid acquisition, SEO pages, tracking and lead-response workflows."; Image="assets/image/casestudy/Workflow Automation.png"; ImageAlt="Marketing workflow automation visual"; ImageWidth="1586"; ImageHeight="992" }
+  @{ Path="global/performance-marketing-agency-uk.html"; Title="Performance Marketing Agency for UK Companies | WIF Marketing"; Keyword="performance marketing agency for UK companies"; H1="India-based performance marketing agency for UK growth teams."; Focus="WIF can support UK-facing campaigns with paid acquisition, SEO pages, tracking and lead-response workflows."; Image="assets/image/casestudy/Workflow Automation.png"; ImageAlt="Marketing workflow automation visual"; ImageWidth="1586"; ImageHeight="992" },
+  @{ Path="global/performance-marketing-agency-australia.html"; Title="Performance Marketing Agency for Australian Businesses | WIF Marketing"; Keyword="performance marketing agency for Australian businesses"; H1="Performance marketing agency for Australian businesses."; Focus="WIF supports Australia-facing campaigns with paid acquisition, SEO pages, tracking and lead-response workflows."; Image="assets/image/casestudy/Workflow Automation.png"; ImageAlt="Marketing workflow automation visual"; ImageWidth="1586"; ImageHeight="992" },
+  @{ Path="global/google-ads-agency-australia.html"; Title="Google Ads Agency for Australian Businesses | WIF Marketing"; Keyword="Google Ads agency for Australian businesses"; H1="India-based Google Ads agency for Australian businesses."; Focus="Australian Google Ads accounts need search intent, location logic, landing-page clarity and lead-quality reporting working together."; Image="assets/image/casestudy/Bajaj Chetak Lead Generation.png"; ImageAlt="Google Ads lead generation campaign visual"; ImageWidth="1586"; ImageHeight="992" },
+  @{ Path="global/performance-marketing-agency-new-zealand.html"; Title="Performance Marketing Agency for New Zealand Businesses | WIF Marketing"; Keyword="performance marketing agency for New Zealand businesses"; H1="Performance marketing agency for New Zealand businesses."; Focus="WIF helps New Zealand-facing teams connect paid media, SEO pages, tracking and lead response."; Image="assets/image/casestudy/Evanta International B2B Lead Generation.png"; ImageAlt="International B2B lead generation visual"; ImageWidth="1535"; ImageHeight="1024" },
+  @{ Path="global/google-ads-agency-new-zealand.html"; Title="Google Ads Agency for New Zealand Businesses | WIF Marketing"; Keyword="Google Ads agency for New Zealand businesses"; H1="India-based Google Ads agency for New Zealand businesses."; Focus="New Zealand Google Ads campaigns need tight search intent, practical location targeting, conversion tracking and sales-feedback loops."; Image="assets/image/casestudy/Bajaj Chetak Revenue Scale.png"; ImageAlt="Revenue scale campaign visual"; ImageWidth="1537"; ImageHeight="1023" }
 )
 
 foreach ($p in $morePages) {

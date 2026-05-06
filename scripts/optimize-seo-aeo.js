@@ -154,7 +154,7 @@ function organizationNode() {
     email: "business@wifmarketing.co",
     telephone: "+91-9537192471",
     priceRange: "$$",
-    areaServed: ["Surat", "Gujarat", "India", "United States", "United Kingdom", "Canada", "Australia"],
+    areaServed: ["Surat", "Gujarat", "India", "United States", "United Kingdom", "Canada", "Australia", "New Zealand"],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Surat",
@@ -166,7 +166,7 @@ function organizationNode() {
       telephone: "+91-9537192471",
       email: "business@wifmarketing.co",
       contactType: "sales",
-      areaServed: ["IN", "US", "GB", "CA", "AU"],
+      areaServed: ["IN", "US", "GB", "CA", "AU", "NZ"],
       availableLanguage: ["en", "hi", "gu"],
     },
     parentOrganization: {
@@ -259,7 +259,7 @@ function contentNode(relPath, canonical, title, description) {
       name: title.replace(/\s*\|\s*WIF Marketing$/, ""),
       description,
       provider: { "@id": `${site}/#organization` },
-      areaServed: ["Surat", "Gujarat", "India", "United States", "United Kingdom", "Canada", "Australia"],
+      areaServed: ["Surat", "Gujarat", "India", "United States", "United Kingdom", "Canada", "Australia", "New Zealand"],
       serviceType: title.replace(/\s*\|\s*WIF Marketing$/, ""),
     };
   }

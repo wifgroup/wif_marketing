@@ -9119,3 +9119,95 @@ article:focus-within img,
         right: 18px;
     }
 }
+
+/* Phone header navigation: sticky header with hamburger menu. */
+@media (max-width: 720px) {
+    .site-header,
+    .home-page .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 80;
+    }
+
+    .site-header .header-shell,
+    .home-page .site-header .header-shell {
+        align-items: center;
+        justify-content: space-between;
+        min-height: 58px;
+        padding: 0 12px;
+    }
+
+    .menu-toggle,
+    .home-page .menu-toggle {
+        position: static !important;
+        inset: auto;
+        z-index: 1;
+        flex: 0 0 44px;
+        width: 44px;
+        height: 44px;
+        display: inline-flex !important;
+        margin-left: auto;
+        border: 1px solid var(--color-soft-concrete);
+        border-radius: var(--radius-default);
+        background: var(--color-canvas-white);
+        transform: none;
+    }
+
+    .site-nav,
+    .home-page .site-nav {
+        position: fixed !important;
+        inset: 78px 12px auto 12px;
+        z-index: 79;
+        display: grid !important;
+        gap: var(--spacing-4);
+        width: auto;
+        margin: 0;
+        padding: var(--spacing-12);
+        background: rgba(255, 255, 255, 0.96);
+        border: 1px solid var(--color-soft-concrete);
+        border-radius: var(--radius-card);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-8px);
+        backdrop-filter: blur(14px);
+    }
+
+    .site-nav a,
+    .home-page .site-nav a {
+        min-height: 44px;
+        display: inline-flex;
+        justify-content: flex-start;
+        padding: var(--spacing-12);
+        font-size: 1rem;
+        white-space: normal;
+    }
+
+    .menu-open .site-nav,
+    .menu-open.home-page .site-nav {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .site-nav .nav-cta,
+    .home-page .site-nav .nav-cta {
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: var(--spacing-12) var(--spacing-16);
+        font-size: 1rem;
+        line-height: 1.1;
+    }
+
+    .site-nav .nav-cta::after,
+    .home-page .site-nav .nav-cta::after {
+        content: none;
+    }
+}

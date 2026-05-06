@@ -113,7 +113,11 @@
     { href: "industries/d2c-marketing-agency-india.html", label: "D2C marketing India" },
     { href: "global/google-ads-agency-usa.html", label: "Google Ads USA" },
     { href: "global/linkedin-ads-agency-usa.html", label: "LinkedIn Ads USA" },
-    { href: "global/performance-marketing-agency-uk.html", label: "Performance marketing UK" }
+    { href: "global/performance-marketing-agency-uk.html", label: "Performance marketing UK" },
+    { href: "global/performance-marketing-agency-australia.html", label: "Performance marketing Australia" },
+    { href: "global/google-ads-agency-australia.html", label: "Google Ads Australia" },
+    { href: "global/performance-marketing-agency-new-zealand.html", label: "Performance marketing New Zealand" },
+    { href: "global/google-ads-agency-new-zealand.html", label: "Google Ads New Zealand" }
   ];
 
   const normalizedPathname = decodeURI(pathname).replace(/\\/g, "/");
