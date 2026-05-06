@@ -3,7 +3,7 @@ const path = require("path");
 
 const root = path.resolve(__dirname, "..");
 const site = "https://wifmarketing.co";
-const lastmod = "2026-05-05";
+const lastmod = "2026-05-06";
 const imageUrl = `${site}/assets/image/wif_marketing.png`;
 
 const skipDirs = new Set([".git", "node_modules", "assets", "Design"]);
@@ -144,18 +144,30 @@ function breadcrumbList(relPath, canonical) {
 
 function organizationNode() {
   return {
-    "@type": "Organization",
+    "@type": ["Organization", "ProfessionalService"],
     "@id": `${site}/#organization`,
     name: "WIF Marketing",
     url: `${site}/`,
     logo: imageUrl,
+    image: imageUrl,
+    description: "WIF Marketing is a Surat-based performance marketing agency for paid ads, SEO growth pages, tracking, automation and lead-generation systems.",
     email: "business@wifmarketing.co",
     telephone: "+91-9537192471",
+    priceRange: "$$",
+    areaServed: ["Surat", "Gujarat", "India", "United States", "United Kingdom", "Canada", "Australia"],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Surat",
       addressRegion: "Gujarat",
       addressCountry: "IN",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+91-9537192471",
+      email: "business@wifmarketing.co",
+      contactType: "sales",
+      areaServed: ["IN", "US", "GB", "CA", "AU"],
+      availableLanguage: ["en", "hi", "gu"],
     },
     parentOrganization: {
       "@type": "Organization",
@@ -338,8 +350,8 @@ function processFile(file) {
   const title = getTag(html, /<title>([\s\S]*?)<\/title>/i);
   const description = getMeta(html, "name", "description");
   const canonical = getCanonical(html, relPath);
-  const ogTitle = getMeta(html, "property", "og:title") || title;
-  const ogDescription = getMeta(html, "property", "og:description") || description;
+  const ogTitle = title;
+  const ogDescription = description;
 
   html = upsertMeta(html, "name", "author", "WIF Marketing");
   html = upsertMeta(html, "name", "publisher", "WIF Marketing");

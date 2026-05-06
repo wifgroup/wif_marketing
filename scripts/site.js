@@ -11,6 +11,20 @@
     target.textContent = new Date().getFullYear();
   });
 
+  const footerGrid = document.querySelector(".site-footer .footer-grid");
+
+  if (footerGrid && !body.classList.contains("home-page")) {
+    const footerSections = Array.from(footerGrid.children);
+    footerGrid.dataset.footerSections = String(footerSections.length);
+
+    footerSections.forEach((section) => {
+      const heading = section.querySelector("h2");
+      if (!heading) return;
+
+      section.dataset.footerSection = heading.textContent.trim().toLowerCase().replace(/\s+/g, "-");
+    });
+  }
+
   const closeMenu = () => {
     body.classList.remove("menu-open");
     if (menuToggle) {
@@ -81,6 +95,59 @@
 
   const pathname = window.location.pathname;
   const currentPath = pathname.split("/").pop() || "index.html";
+  const growthPages = [
+    { href: "digital-marketing-agency-surat.html", label: "Digital marketing Surat" },
+    { href: "performance-marketing-agency-surat.html", label: "Performance marketing Surat" },
+    { href: "services/google-ads-agency-surat.html", label: "Google Ads Surat" },
+    { href: "services/ppc-agency-surat.html", label: "PPC agency Surat" },
+    { href: "services/local-seo-agency-surat.html", label: "Local SEO Surat" },
+    { href: "services/seo-agency-surat.html", label: "SEO agency Surat" },
+    { href: "services/google-ads-management-india.html", label: "Google Ads India" },
+    { href: "services/meta-ads-agency-india.html", label: "Meta Ads India" },
+    { href: "services/linkedin-ads-agency-india.html", label: "LinkedIn Ads India" },
+    { href: "industries/ev-marketing-agency-india.html", label: "EV marketing India" },
+    { href: "industries/textile-marketing-agency-surat.html", label: "Textile marketing Surat" },
+    { href: "industries/export-business-marketing-gujarat.html", label: "Export marketing Gujarat" },
+    { href: "industries/b2b-lead-generation-agency-india.html", label: "B2B lead generation India" },
+    { href: "industries/showroom-marketing-agency-surat.html", label: "Showroom marketing Surat" },
+    { href: "industries/d2c-marketing-agency-india.html", label: "D2C marketing India" },
+    { href: "global/google-ads-agency-usa.html", label: "Google Ads USA" },
+    { href: "global/linkedin-ads-agency-usa.html", label: "LinkedIn Ads USA" },
+    { href: "global/performance-marketing-agency-uk.html", label: "Performance marketing UK" }
+  ];
+
+  const normalizedPathname = decodeURI(pathname).replace(/\\/g, "/");
+  const currentGrowthPage = growthPages.find((page) => normalizedPathname.endsWith(`/${page.href}`));
+
+  const getPageDepthPrefix = () => {
+    if (normalizedPathname.endsWith("/index.html") || normalizedPathname.endsWith("/")) return "";
+    return currentGrowthPage && currentGrowthPage.href.includes("/") ? "../" : "";
+  };
+
+  const pageHash = (value) =>
+    Array.from(value).reduce((hash, character) => ((hash << 5) - hash + character.charCodeAt(0)) | 0, 0);
+
+  document.querySelectorAll("[data-growth-pages]").forEach((target) => {
+    if (currentPath === "index.html" && !currentGrowthPage) return;
+
+    const prefix = target.dataset.growthPrefix || getPageDepthPrefix();
+    const pageKey = currentGrowthPage ? currentGrowthPage.href : currentPath;
+    const pool = growthPages.filter((page) => page.href !== pageKey);
+    const start = Math.abs(pageHash(pageKey)) % pool.length;
+    const selectedPages = Array.from({ length: 5 }, (_, index) => pool[(start + index) % pool.length]);
+    const heading = document.createElement("h2");
+
+    heading.textContent = "Growth pages";
+    target.replaceChildren(heading);
+
+    selectedPages.forEach((page) => {
+      const link = document.createElement("a");
+      link.href = `${prefix}${page.href}`;
+      link.textContent = page.label;
+      target.appendChild(link);
+    });
+  });
+
   document.querySelectorAll(".site-nav a").forEach((link) => {
     const href = link.getAttribute("href") || "";
     const hrefPath = href.split("#")[0];
@@ -241,6 +308,33 @@
     const home = document.querySelector(".gpt-home");
     if (!home) return;
 
+    const ledgerImage = home.querySelector("[data-demand-ledger-image]");
+    const ledgerButtons = Array.from(home.querySelectorAll("[data-demand-ledger-trigger]"));
+
+    if (ledgerImage && ledgerButtons.length) {
+      ledgerButtons.forEach((button) => {
+        const imageSrc = button.dataset.image;
+
+        if (imageSrc) {
+          const preload = new Image();
+          preload.src = imageSrc;
+        }
+
+        button.addEventListener("click", () => {
+          if (!imageSrc) return;
+
+          ledgerImage.src = imageSrc;
+          ledgerImage.alt = button.dataset.alt || "";
+
+          ledgerButtons.forEach((item) => {
+            const isActive = item === button;
+            item.classList.toggle("is-active", isActive);
+            item.setAttribute("aria-pressed", String(isActive));
+          });
+        });
+      });
+    }
+
     document.querySelectorAll(".gpt-accordion-card").forEach((card) => {
       card.addEventListener("mouseenter", () => {
         document.querySelectorAll(".gpt-accordion-card").forEach((item) => item.classList.toggle("is-active", item === card));
@@ -265,74 +359,6 @@
           });
         });
       });
-    });
-
-    if (reduceMotion || !window.gsap || !window.ScrollTrigger) {
-      document.querySelectorAll("[data-word-reveal]").forEach((text) => {
-        text.innerHTML = text.textContent
-          .trim()
-          .split(/\s+/)
-          .map((word) => `<span>${word}</span>`)
-          .join(" ");
-      });
-      return;
-    }
-
-    const { gsap, ScrollTrigger } = window;
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.fromTo(
-      ".gpt-hero-bg img",
-      { scale: 1.12, opacity: 0.35 },
-      {
-        scale: 1.04,
-        opacity: 0.55,
-        duration: 1.35,
-        ease: "power3.out"
-      }
-    );
-
-    document.querySelectorAll("[data-word-reveal]").forEach((text) => {
-      const words = text.textContent.trim().split(/\s+/);
-      text.innerHTML = words.map((word) => `<span>${word}</span>`).join(" ");
-
-      gsap.to(text.querySelectorAll("span"), {
-        opacity: 1,
-        stagger: 0.035,
-        ease: "none",
-        scrollTrigger: {
-          trigger: text,
-          start: "top 78%",
-          end: "bottom 42%",
-          scrub: true
-        }
-      });
-    });
-
-    document.querySelectorAll("[data-gsap-pin]").forEach((section) => {
-      const pinCopy = section.querySelector("[data-pin-copy]");
-      if (!pinCopy || window.innerWidth < 981) return;
-
-      ScrollTrigger.create({
-        trigger: section,
-        start: "top top+=96",
-        end: "bottom bottom",
-        pin: pinCopy,
-        pinSpacing: false
-      });
-    });
-
-    document.querySelectorAll("[data-scale-media] img").forEach((image) => {
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: image,
-          start: "top 88%",
-          end: "bottom 12%",
-          scrub: true
-        }
-      })
-        .fromTo(image, { scale: 0.8, opacity: 0.38, filter: "grayscale(1) contrast(1.12) brightness(0.72)" }, { scale: 1, opacity: 1, filter: "grayscale(0.2) contrast(1.08) brightness(1)", duration: 0.55, ease: "none" })
-        .to(image, { scale: 0.96, opacity: 0.2, filter: "grayscale(1) contrast(1.12) brightness(0.45)", duration: 0.45, ease: "none" });
     });
   };
 
