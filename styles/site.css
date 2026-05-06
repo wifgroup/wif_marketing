@@ -8776,3 +8776,346 @@ article:focus-within img,
         overflow-wrap: anywhere;
     }
 }
+
+/* Mobile verification layer: keep this last. */
+@media (max-width: 720px) {
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .shell,
+    .gpt-home .shell,
+    .site-header .header-shell,
+    .home-page .site-header .header-shell {
+        width: min(calc(100% - 24px), 1180px);
+        max-width: 1180px;
+    }
+
+    .section,
+    .gpt-section {
+        padding-block: clamp(2.8rem, 11vw, 4.4rem);
+    }
+
+    .page-hero + .section,
+    .section + .section {
+        padding-top: clamp(2.6rem, 10vw, 4rem);
+    }
+
+    .page-hero {
+        padding-block: clamp(3rem, 12vw, 4.4rem);
+    }
+
+    .page-hero-grid,
+    .split-heading,
+    .section-grid,
+    .cta-grid,
+    .faq-grid,
+    .process-grid,
+    .contact-grid,
+    .case-card,
+    .gpt-hero-inner,
+    .gpt-section-head,
+    .gpt-channel-grid,
+    .gpt-response-grid,
+    .gpt-resources-grid,
+    .gpt-faq-grid,
+    .gpt-proof-grid,
+    .gpt-action-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: clamp(1rem, 5vw, 1.8rem);
+    }
+
+    .gpt-section-head {
+        margin-bottom: clamp(1.6rem, 7vw, 2.4rem);
+    }
+
+    body:not(.home-page) .page-hero h1,
+    .gpt-home h1 {
+        max-width: 100%;
+        font-size: clamp(2.15rem, 10.5vw, 3.2rem);
+        line-height: 1.03;
+        overflow-wrap: break-word;
+    }
+
+    body:not(.home-page) main h2,
+    .gpt-home h2 {
+        max-width: 100%;
+        font-size: clamp(1.85rem, 8.8vw, 2.8rem);
+        line-height: 1.06;
+        overflow-wrap: break-word;
+    }
+
+    body:not(.home-page) main h3,
+    .gpt-home h3,
+    .gpt-channel-table strong,
+    .gpt-fit-card strong,
+    .gpt-resource-list strong {
+        font-size: clamp(1.04rem, 5.3vw, 1.35rem);
+        line-height: 1.12;
+        overflow-wrap: break-word;
+    }
+
+    .gpt-kicker,
+    .eyebrow,
+    .case-label,
+    .meta-label,
+    .service-panel span,
+    .resource-card span,
+    .lesson-card span,
+    .belief-card span,
+    .intake-card span,
+    .lab-card span,
+    .blueprint-row span,
+    .principle-row span,
+    .case-card-media span,
+    .service-snapshot span,
+    .contact-card span,
+    .case-scoreboard span,
+    .gpt-channel-table span,
+    .gpt-fit-card span,
+    .gpt-resource-list span,
+    .gpt-faq-list summary,
+    .gpt-budget-board dt {
+        font-size: clamp(0.82rem, 3.8vw, 0.95rem);
+        line-height: 1.28;
+    }
+
+    .page-lede,
+    .section-intro,
+    .process-intro p,
+    .contact-panel p,
+    .service-panel p,
+    .resource-card p,
+    .lesson-card p,
+    .belief-card p,
+    .intake-card p,
+    .lab-card p,
+    .case-card p,
+    .gpt-hero-lede,
+    .gpt-section-head p:last-child,
+    .gpt-response-copy p:not(.gpt-kicker),
+    .gpt-resources-copy p {
+        max-width: 100%;
+        font-size: clamp(0.96rem, 4vw, 1.04rem);
+        line-height: 1.52;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    .gpt-hero {
+        padding-block: clamp(2.6rem, 10vw, 4rem);
+    }
+
+    .gpt-hero-copy {
+        max-width: 100%;
+    }
+
+    .gpt-hero-actions,
+    .gpt-action .cta-actions,
+    .hero-actions,
+    .cta-actions,
+    .form-actions {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+    }
+
+    .btn,
+    .gpt-home .btn {
+        width: 100%;
+        min-height: 48px;
+        padding-inline: 16px;
+        text-align: center;
+        white-space: normal;
+    }
+
+    .gpt-metrics,
+    .gpt-proof-ledger dl,
+    .gpt-resource-list,
+    .gpt-fit-grid,
+    .gpt-response-steps,
+    .gpt-system-grid,
+    .service-matrix,
+    .resource-board,
+    .lesson-grid,
+    .belief-grid,
+    .intake-grid,
+    .lab-grid,
+    .audit-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .gpt-proof-ledger-body {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .gpt-proof-ledger-horizontal dl div {
+        min-height: 102px;
+        padding: 16px;
+    }
+
+    .gpt-proof-ledger-horizontal img {
+        height: auto;
+        min-height: 180px;
+        aspect-ratio: 16 / 10;
+    }
+
+    .gpt-channel-table article {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        min-height: 0;
+        padding: 16px;
+    }
+
+    .gpt-channel-table p,
+    .gpt-channel-table a {
+        grid-column: auto;
+    }
+
+    .gpt-channel-table a,
+    .gpt-response-copy .text-link {
+        white-space: normal;
+    }
+
+    .gpt-response-steps li {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 8px 12px;
+        min-height: 0;
+        padding: 16px;
+    }
+
+    .gpt-response-steps span {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+
+    .gpt-response-steps strong,
+    .gpt-response-steps em {
+        grid-column: 2;
+    }
+
+    .gpt-response-steps em {
+        line-height: 1.38;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    .gpt-fit-grid {
+        gap: 12px;
+    }
+
+    .gpt-fit-card {
+        min-height: 0;
+        justify-content: flex-start;
+        gap: clamp(1.8rem, 8vw, 2.8rem);
+        padding: 18px;
+    }
+
+    .gpt-budget-board,
+    .gpt-response-board {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .service-snapshot,
+    .contact-card,
+    .about-card,
+    .page-card,
+    .contact-panel,
+    .legal-card,
+    .service-panel,
+    .resource-card,
+    .lesson-card,
+    .belief-card,
+    .intake-card,
+    .lab-card,
+    .audit-card,
+    .gpt-system-card {
+        min-height: 0;
+        padding: 16px;
+    }
+
+    .service-snapshot > span,
+    .contact-card > span,
+    .about-card > span,
+    .service-snapshot strong,
+    .contact-card strong,
+    .about-card strong,
+    .page-card strong,
+    .service-snapshot p,
+    .contact-card p,
+    .about-card p,
+    .page-card p {
+        max-width: 100%;
+        padding-inline: 0;
+    }
+
+    .service-snapshot strong,
+    .contact-card strong,
+    .about-card strong {
+        font-size: clamp(1.45rem, 7.6vw, 2rem);
+        line-height: 1.08;
+    }
+
+    .service-snapshot dl div,
+    .contact-card dl div,
+    .about-card dl div,
+    .page-card dl div,
+    .meta-grid,
+    .blueprint-row,
+    .principle-row,
+    .timeline-item {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .blueprint-row,
+    .principle-row,
+    .timeline-item {
+        gap: 10px;
+    }
+
+    .filter-bar {
+        position: static;
+        width: 100%;
+        border-radius: var(--radius-medium);
+    }
+
+    .filter-btn {
+        flex: 1 1 calc(50% - 8px);
+        min-width: 0;
+        white-space: normal;
+    }
+}
+
+@media (max-width: 380px) {
+    .shell,
+    .gpt-home .shell,
+    .site-header .header-shell,
+    .home-page .site-header .header-shell {
+        width: min(calc(100% - 20px), 1180px);
+    }
+
+    body:not(.home-page) .page-hero h1,
+    .gpt-home h1 {
+        font-size: clamp(2rem, 10vw, 2.85rem);
+    }
+
+    body:not(.home-page) main h2,
+    .gpt-home h2 {
+        font-size: clamp(1.75rem, 8.6vw, 2.45rem);
+    }
+
+    .gpt-response-steps li {
+        grid-template-columns: 36px minmax(0, 1fr);
+        padding: 14px;
+    }
+
+    .home-page .site-nav {
+        right: 18px;
+    }
+}
