@@ -1,4 +1,18 @@
 (() => {
+  // ── Clean URL rewrite ──────────────────────────────────────────────────────
+  // Strips .html extension from the browser address bar without a page reload.
+  // Also normalises /index.html → / for the home page.
+  // Works in tandem with the 404.html redirect so direct clean-URL visits also work.
+  (function cleanUrl() {
+    const p = window.location.pathname;
+    if (p.endsWith("/index.html")) {
+      history.replaceState(null, "", p.slice(0, -"index.html".length) || "/");
+    } else if (p.endsWith(".html")) {
+      history.replaceState(null, "", p.slice(0, -5));
+    }
+  })();
+  // ──────────────────────────────────────────────────────────────────────────
+
   const API_URL = "https://dhansafar-web-api.vercel.app/api/contacts";
   const body = document.body;
   const header = document.querySelector("[data-header]");

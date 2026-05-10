@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -28,6 +28,65 @@
   <meta name="twitter:image:alt" content="WIF Marketing logo">
   <link rel="preload" href="assets/fonts/galhau-display-font/GalhauDisplay-VariableVF.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="assets/fonts/galhau-display-font/GalhauDisplay-RegularSlanted.ttf" as="font" type="font/ttf" crossorigin>
+  <script>
+    // Dynamic clean-URL redirect using sitemap.xml as the source of truth.
+    // GitHub Pages 404s any extension-less URL — this script fetches the
+    // sitemap, checks if the path is a real page, and redirects if so.
+    // Unknown paths (gibberish, typos) reveal the 404 page normally.
+    // No hardcoded list — works automatically whenever sitemap.xml is updated.
+    (function () {
+      var path = window.location.pathname.replace(/\/$/, '') || '/';
+
+      // Nothing to do at root or if path already has an extension (assets etc.)
+      if (path === '/' || path.indexOf('.') !== -1) return;
+
+      // Hide page while we check — prevents a flash of 404 content
+      // before we know whether to redirect or not.
+      document.documentElement.style.visibility = 'hidden';
+
+      // Safety valve: always reveal after 1s even if fetch is slow/blocked.
+      var fallbackTimer = setTimeout(reveal, 1000);
+
+      function reveal() {
+        document.documentElement.style.visibility = '';
+      }
+
+      fetch('/sitemap.xml')
+        .then(function (res) { return res.text(); })
+        .then(function (xml) {
+          var parser = new DOMParser();
+          var doc    = parser.parseFromString(xml, 'application/xml');
+          var locs   = doc.querySelectorAll('loc');
+          var found  = false;
+
+          // Each <loc> is like https://wifmarketing.co/services.html
+          // Strip domain + .html to get the clean slug, then compare.
+          for (var i = 0; i < locs.length; i++) {
+            var url  = locs[i].textContent.trim();
+            var slug = url
+              .replace(/^https?:\/\/[^/]+/, '')  // strip domain
+              .replace(/\.html$/, '')              // strip .html
+              .replace(/\/$/, '');                 // strip trailing slash
+
+            if (slug === path) { found = true; break; }
+          }
+
+          clearTimeout(fallbackTimer);
+          if (found) {
+            // Real page — redirect to .html; site.js strips it from the bar.
+            window.location.replace(path + '.html');
+          } else {
+            // Truly unknown URL — show the 404 page.
+            reveal();
+          }
+        })
+        .catch(function () {
+          // Fetch failed (offline, error) — reveal 404 page.
+          clearTimeout(fallbackTimer);
+          reveal();
+        });
+    })();
+  </script>
   <link rel="stylesheet" href="styles/site.css">
   <script src="scripts/site.js" defer></script>
 </head>
@@ -36,7 +95,7 @@
   <a href="#main" class="skip-link">Skip to content</a>
   <header class="site-header" data-header>
     <div class="shell header-shell">
-      <a href="index.html" class="brand" aria-label="WIF Marketing home"><img src="assets/image/wif_marketing.png" alt="WIF Marketing" width="148" height="48"></a>
+      <a href="/" class="brand" aria-label="WIF Marketing home"><img src="assets/image/wif_marketing.png" alt="WIF Marketing" width="148" height="48"></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle><span></span><span></span><span></span></button>
       <nav class="site-nav" id="site-menu" data-site-menu aria-label="Primary navigation">
         <a href="services.html">Services</a><a href="case-studies.html">Case Studies</a>
@@ -54,7 +113,7 @@
           <h1 id="not-found-title">This page is not in the growth map.</h1>
           <p class="page-lede">The link may be outdated, moved or typed incorrectly. Use one of the main routes below to continue.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="index.html">Return home</a>
+            <a class="btn btn-primary" href="/">Return home</a>
             <a class="btn btn-secondary" href="contact.html">Contact WIF</a>
           </div>
         </div>
@@ -74,7 +133,7 @@
 
   <footer class="site-footer">
     <div class="shell footer-grid">
-      <div><a href="index.html" class="footer-brand"><img src="assets/image/wif_marketing.png" alt="WIF Marketing" width="140" height="45" loading="lazy"></a><p>Performance marketing agency for paid ads, SEO and conversion tracking.</p></div>
+      <div><a href="/" class="footer-brand"><img src="assets/image/wif_marketing.png" alt="WIF Marketing" width="140" height="45" loading="lazy"></a><p>Performance marketing agency for paid ads, SEO and conversion tracking.</p></div>
       <div><h2>Company</h2><a href="about.html">About</a><a href="case-studies.html">Case Studies</a><a href="services.html">Services</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms</a></div>
       <div data-growth-pages data-growth-prefix=""><h2>Growth pages</h2><a href="performance-marketing-agency-surat.html">Performance marketing Surat</a><a href="services/google-ads-agency-surat.html">Google Ads Surat</a><a href="services/ppc-agency-surat.html">PPC agency Surat</a><a href="services/local-seo-agency-surat.html">Local SEO Surat</a><a href="services/seo-agency-surat.html">SEO agency Surat</a></div>
       <div><h2>Proof</h2><a href="case-studies/bajaj-chetak-ev-lead-generation.html">Bajaj EV leads</a><a href="case-studies/bajaj-chetak-revenue-scale.html">Bajaj revenue scale</a><a href="case-studies/revolt-motors-ev-marketing.html">Revolt EV growth</a><a href="case-studies/workflow-automation-crm-routing.html">Workflow automation</a></div><div><h2>Guides</h2><a href="resources/how-to-reduce-cost-per-lead-google-ads.html">Reduce Google Ads CPL</a><a href="resources/b2b-linkedin-ads-playbook.html">B2B LinkedIn Ads playbook</a><a href="resources/ai-calling-agent-lead-qualification-guide.html">AI calling guide</a><a href="resources/local-seo-checklist-surat-businesses.html">Local SEO checklist</a></div><div><h2>Contact</h2><a href="mailto:business@wifmarketing.co">business@wifmarketing.co</a><a href="tel:+919537192471">+91 95371 92471</a><span>Surat, Gujarat, India</span></div>
