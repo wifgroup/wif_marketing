@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Sitemap: https://wifmarketing.co/sitemap.xml
+
+Allow: /blog/performance-marketing-trends-2026.html
+Allow: /blog/local-seo-strategies-surat.html
+Allow: /blog/google-ads-vs-meta-ads-surat.html

@@ -1,0 +1,15 @@
+{
+  "name": "wif_marketing",
+  "version": "1.0.0",
+  "description": "WIF Marketing - Content Build System",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-content.js",
+    "build:dev": "node scripts/build-content.js"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.1",
+    "marked": "^12.0.2"
+  }
+}
