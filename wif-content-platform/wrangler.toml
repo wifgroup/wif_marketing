@@ -10,7 +10,19 @@ pattern = "wifcontentplatform.com/*"
 
 [vars]
 GITHUB_APP_ID = "YOUR_GITHUB_APP_ID"
+GITHUB_APP_SECRET = "YOUR_GITHUB_APP_SECRET"
 GITHUB_INSTALLATION_ID = "YOUR_GITHUB_INSTALLATION_ID"
 GITHUB_WEBHOOK_SECRET = "YOUR_WEBHOOK_SECRET"
-R2_BUCKET_NAME = "wif-content-media"
-KV_NAMESPACE_ID = "YOUR_KV_NAMESPACE_ID"
+GITHUB_PRIVATE_KEY = "YOUR_BASE64_PRIVATE_KEY"
+GITHUB_REPO = "wifgroup/wif_marketing"
+GITHUB_BRANCH = "New"
+
+# KV binding — create namespace "WIF_CONTENT_KV" and replace with its ID
+# [[kv_namespaces]]
+# binding = "CONTENT_KV"
+# id = "YOUR_KV_NAMESPACE_ID"
+
+# R2 binding — create bucket "wif-content-media" and uncomment
+# [[r2_buckets]]
+# binding = "MEDIA_BUCKET"
+# bucket_name = "wif-content-media"
