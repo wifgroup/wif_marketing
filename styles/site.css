@@ -6031,6 +6031,74 @@ h3 {
     font-size: clamp(1.05rem, 1.7vw, 1.35rem);
 }
 
+/* ─── Client logo strip ─────────────────────────────────────────────────── */
+
+.gpt-clients {
+    background: var(--color-canvas-white);
+    border-block: 1px solid var(--gpt-stone);
+}
+
+.gpt-client-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-12);
+}
+
+.gpt-client-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 72px;
+    min-width: 140px;
+    padding: var(--spacing-12) var(--spacing-20);
+    border: 1px solid var(--gpt-border);
+    border-radius: var(--radius-medium);
+    background: rgba(243, 239, 235, 0.6);
+    text-decoration: none;
+    transition:
+        background 0.22s var(--ease),
+        border-color 0.22s var(--ease),
+        transform 0.22s var(--ease),
+        filter 0.22s var(--ease);
+}
+
+.gpt-client-logo:hover,
+.gpt-client-logo:focus-visible {
+    background: var(--color-canvas-white);
+    border-color: var(--gpt-ink);
+    transform: translateY(-2px);
+}
+
+.gpt-client-logo img {
+    max-width: 130px;
+    max-height: 44px;
+    object-fit: contain;
+    filter: grayscale(1) contrast(0.85);
+    transition: filter 0.22s var(--ease);
+}
+
+.gpt-client-logo:hover img,
+.gpt-client-logo:focus-visible img {
+    filter: grayscale(0) contrast(1);
+}
+
+@media (max-width: 720px) {
+    .gpt-client-strip {
+        gap: var(--spacing-10);
+    }
+    .gpt-client-logo {
+        min-width: 120px;
+        height: 60px;
+        padding: var(--spacing-10) var(--spacing-16);
+    }
+    .gpt-client-logo img {
+        max-width: 100px;
+    }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+
 .gpt-action {
     padding: clamp(5.5rem, 10vw, 8.5rem) 0 clamp(6.5rem, 11vw, 10rem);
     background:
