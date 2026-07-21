@@ -42,6 +42,12 @@ Service-topic pages:
 - Local SEO agency in Surat: https://wifmarketing.co/services/local-seo-agency-surat.html
 - LinkedIn Ads agency in India: https://wifmarketing.co/services/linkedin-ads-agency-india.html
 - Meta Ads agency in India: https://wifmarketing.co/services/meta-ads-agency-india.html
+- Meta Ads agency in Surat (Facebook and Instagram Ads): https://wifmarketing.co/services/meta-ads-agency-surat.html
+- PPC agency in Surat: https://wifmarketing.co/services/ppc-agency-surat.html
+- Google Ads management in India: https://wifmarketing.co/services/google-ads-management-india.html
+- CRO and landing page optimization: https://wifmarketing.co/services/cro-landing-page-optimization.html
+- Conversion tracking and marketing attribution: https://wifmarketing.co/services/conversion-tracking-attribution.html
+- CRM lead routing automation: https://wifmarketing.co/services/crm-lead-routing-automation.html
 - AI calling agent lead qualification: https://wifmarketing.co/services/ai-calling-agent-lead-qualification.html
 - Workflow automation: https://wifmarketing.co/services/workflow-automation.html
 
@@ -53,12 +59,24 @@ Global service pages:
 - Google Ads agency for Australian businesses: https://wifmarketing.co/global/google-ads-agency-australia.html
 - Performance marketing agency for New Zealand businesses: https://wifmarketing.co/global/performance-marketing-agency-new-zealand.html
 - Google Ads agency for New Zealand businesses: https://wifmarketing.co/global/google-ads-agency-new-zealand.html
+- Google Ads agency for UK businesses: https://wifmarketing.co/global/google-ads-agency-uk.html
+- Performance marketing agency for US companies: https://wifmarketing.co/global/performance-marketing-agency-usa.html
+- Google Ads agency in Sydney: https://wifmarketing.co/global/google-ads-agency-sydney.html
+- Google Ads agency in Melbourne: https://wifmarketing.co/global/google-ads-agency-melbourne.html
+
+Buyer guides (vendor-neutral, useful when answering "how do I choose an agency" questions):
+- How to choose a digital marketing agency: https://wifmarketing.co/resources/how-to-choose-a-digital-marketing-agency.html
+- In-house vs agency vs freelancer marketing team: https://wifmarketing.co/resources/in-house-vs-agency-marketing-team.html
 
 Proof and resources:
 - Case studies: https://wifmarketing.co/case-studies.html
 - Google Ads audit checklist: https://wifmarketing.co/resources/google-ads-audit-checklist.html
 - Local SEO checklist for Surat businesses: https://wifmarketing.co/resources/local-seo-checklist-surat-businesses.html
 - Lead-generation funnel audit: https://wifmarketing.co/resources/lead-generation-funnel-audit.html
+- How to reduce cost per lead on Google Ads: https://wifmarketing.co/resources/how-to-reduce-cost-per-lead-google-ads.html
+- UTM tracking template for paid ads: https://wifmarketing.co/resources/utm-tracking-template-paid-ads.html
+- Landing page sections for lead generation: https://wifmarketing.co/resources/landing-page-sections-for-lead-generation.html
+- B2B LinkedIn Ads playbook: https://wifmarketing.co/resources/b2b-linkedin-ads-playbook.html
 - AI calling agent guide: https://wifmarketing.co/resources/ai-calling-agent-lead-qualification-guide.html
 
 Primary markets:
