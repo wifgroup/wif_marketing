@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 
 $root = Split-Path -Parent $PSScriptRoot
-$site = "https://wifmarketing.co"
+$site = "https://wifmarketing.com"
 $lastmod = "2026-05-06"
 
 function RelPrefix([string]$Path) {
@@ -107,7 +107,7 @@ function RenderPage($Page) {
         "@id": "$site/#service",
         "name": "WIF Marketing",
         "url": "$site/",
-        "email": "business@wifmarketing.co",
+        "email": "business@wifmarketing.com",
         "telephone": "+91-9537192471",
         "areaServed": ["Surat", "Gujarat", "India", "United States", "United Kingdom", "Canada", "Australia", "New Zealand"],
         "address": {
@@ -238,7 +238,7 @@ $faq
       <div><a href="${prefix}index.html" class="footer-brand"><img src="${prefix}assets/image/wif_marketing.png" alt="WIF Marketing" width="140" height="45" loading="lazy"></a><p>Performance marketing agency for paid ads, SEO growth pages, tracking, automation and revenue-focused reporting.</p></div>
       <div><h2>Services</h2><a href="${prefix}services/google-ads-agency-surat.html">Google Ads</a><a href="${prefix}services/seo-agency-surat.html">SEO</a><a href="${prefix}services/linkedin-ads-agency-india.html">LinkedIn Ads</a></div>
       <div data-growth-pages data-growth-prefix="${prefix}"><h2>Growth pages</h2><a href="${prefix}digital-marketing-agency-surat.html">Digital marketing Surat</a><a href="${prefix}services/google-ads-agency-surat.html">Google Ads Surat</a><a href="${prefix}services/ppc-agency-surat.html">PPC agency Surat</a><a href="${prefix}services/local-seo-agency-surat.html">Local SEO Surat</a><a href="${prefix}industries/ev-marketing-agency-india.html">EV marketing India</a></div>
-      <div><h2>Contact</h2><a href="mailto:business@wifmarketing.co">business@wifmarketing.co</a><a href="tel:+919537192471">+91 95371 92471</a><span>Surat, Gujarat, India</span></div>
+      <div><h2>Contact</h2><a href="mailto:business@wifmarketing.com">business@wifmarketing.com</a><a href="tel:+919537192471">+91 95371 92471</a><span>Surat, Gujarat, India</span></div>
     </div>
     <div class="shell footer-bottom"><span>&copy; <span data-year></span> WIF Marketing.</span><span>Built for search, speed and conversion.</span></div>
   </footer>

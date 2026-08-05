@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
-const site = "https://wifmarketing.co";
+const site = "https://wifmarketing.com";
 const lastmod = "2026-05-06";
 const imageUrl = `${site}/assets/image/wif_marketing.png`;
 
@@ -151,7 +151,7 @@ function organizationNode() {
     logo: imageUrl,
     image: imageUrl,
     description: "WIF Marketing is a Surat-based performance marketing agency for paid ads, SEO growth pages, tracking, automation and lead-generation systems.",
-    email: "business@wifmarketing.co",
+    email: "business@wifmarketing.com",
     telephone: "+91-9537192471",
     priceRange: "$$",
     areaServed: ["Surat", "Gujarat", "India", "United States", "United Kingdom", "Canada", "Australia", "New Zealand"],
@@ -164,7 +164,7 @@ function organizationNode() {
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+91-9537192471",
-      email: "business@wifmarketing.co",
+      email: "business@wifmarketing.com",
       contactType: "sales",
       areaServed: ["IN", "US", "GB", "CA", "AU", "NZ"],
       availableLanguage: ["en", "hi", "gu"],

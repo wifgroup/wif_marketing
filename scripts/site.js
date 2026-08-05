@@ -313,7 +313,7 @@
         form.reset();
       } catch (error) {
         console.error("Contact submission failed:", error);
-        status.textContent = "Something went wrong while submitting. Please try again or email business@wifmarketing.co.";
+        status.textContent = "Something went wrong while submitting. Please try again or email business@wifmarketing.com.";
         status.classList.remove("is-success");
         status.classList.add("is-error");
       } finally {
